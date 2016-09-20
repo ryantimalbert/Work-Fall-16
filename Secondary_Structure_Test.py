@@ -21,37 +21,34 @@ def compile_feature_list2(transcript_file, blast_file, database):
 	data= {}
 	gene_codes[gene_code] = data
 	data['transcript'] = sequence
-	blast_file = open(blast_file, 'r')
+	blast_file = open('ModelDataFiles/' + blast_file, 'r')
 	blast_file = blast_file.readlines()
 	feature_codes = {}
 	for line in blast_file:
 		line = line.split()
 		code_bool = 0
-		if len(line) > 1: ## Can tell if multiploe words, if there is then its protein coding
+		if len(line) > 1:
 			code_bool = 1
 		line = line[0]
+		dash_count = 0
 		gene_code = ""
 		count = 0
-		while line[count] != '_': ## compiling gene type
+		while dash_count < 5:
 			gene_code += line[count]
 			count += 1
-		if line[count + 1] ==  'P':
-			gene_code += line[count]
-			count +=1
-			while line[count] != '_':
-				gene_code += line[count]
-				count +=1 
+			if line[count] == '_':
+				dash_count += 1
 		count += 2
 		start = ""
-		while line[count] != '_': ## getting start position
+		while line[count] != '_':
 			start += line[count]
 			count += 1
-		count +=2
-		end = ""
-		while line[count] != '_': ## getting end position
-			end +=  line[count]
-			count +=1 
 		count += 2
+		end = ""
+		while line[count] != '_':
+			end += line[count]
+			count += 1
+		count +=2
 		pos_or_neg = line[count]
 		start = int(start)
 		end = int(end)
@@ -60,6 +57,8 @@ def compile_feature_list2(transcript_file, blast_file, database):
 		active_dictionary['code_boolean'] = code_bool
 		sequence = active_dictionary['transcript'].lower()
 		cds_seq = ""
+
+		ATG_Conservation_Val = 0
 		if pos_or_neg == "+":
 			cds_seq = sequence[start - 1: end]
 		else:
@@ -81,8 +80,6 @@ def compile_feature_list2(transcript_file, blast_file, database):
 		active_dictionary['lens_length'] = len(cds_seq)
 		active_dictionary['lens_ratio'] = float(len(cds_seq))/len(sequence)
 		active_dictionary['transcript'] = sequence
-	training_vectors = []
-	target_values = []
 	result = []
 	for key_name in feature_codes.keys():
 		internal = []
