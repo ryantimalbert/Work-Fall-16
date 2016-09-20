@@ -1,18 +1,6 @@
 import MySQLdb as SQL
 import time
 import sys
-def GC_content(transcription):
-	n_count = 0
-	GC_count = 0
-	for nucleotide in transcription:
-		if nucleotide.lower() == "g" or nucleotide.lower() == "c":
-			GC_count += 1
-		elif nucleotide.lower() == "n":
-			n_count += 1
-		else:
-			pass
-	result = float(GC_count) / (len(transcription) - n_count)
-	return round(result * 100, 3)
 def Compile_Transcript(connection):
 	cursor = connection.cursor()
 	cursor.execute("Select seqTranscript from transcript;")
@@ -53,7 +41,6 @@ def total_breakdown(transcript):
 name = sys.argv[1]
 connect= SQL.connect("gpdb02", "rtalbert", "Spike123@@", name)
 transcript_con = Compile_Transcript(connect)
-GC = GC_content(transcript_con)
 total_breakdown(transcript_con) ## Used for conservation around ATG
 file = open('GC_Content_File.txt', 'a')
 file.write("{database} GC Content: {value}%\n".format(database = name, value = str(GC)))
