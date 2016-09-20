@@ -111,4 +111,8 @@ def compilation(connection, table):
 	file_read.close()
 	file.close()
 	return (codingSequence, non_codingSequence)
+name = sys.argv[1]
+table = sys.argv[2]
+connect= SQL.connect("gpdb05", "asalamov", "asalamov", name)
+compilation(connect, table)
 
