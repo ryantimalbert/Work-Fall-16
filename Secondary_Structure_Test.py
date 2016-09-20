@@ -91,7 +91,9 @@ def compile_feature_list2(transcript_file, blast_file, database):
 def test_secondary(database, fasta, blast):
 	featureIds = compile_feature_list2(fasta, blast, database)
 	out_put = open('secondary_out.txt', 'w+')
+	count = 1
 	for Id in featureIds:
+		print(count)
 		file = open('protein_sequence.txt', 'w+')
 		file.write(Id[0])
 		file.close()
@@ -107,7 +109,6 @@ def test_secondary(database, fasta, blast):
 			data = data.split()
 			if 'Residue' in data:
 				num = 0
-				print(data)
 				if len(data[3]) > 2:
 					H = data[3]
 					digit_length = len(H)
@@ -124,6 +125,7 @@ def test_secondary(database, fasta, blast):
 					E_value = int(data[num + 1])
 			if 'Total_length:' in data:
 				length_sequence = int(data[2])
+		count += 1
 		out_put.write(tag + " " + str(coding) + " " + str(float(H_value + E_value)/ length_sequence) + '\n')
 	out_put.close()
 database = sys.argv[1]
