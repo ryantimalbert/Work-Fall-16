@@ -89,25 +89,37 @@ def compilation(connection, table):
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['a' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
-				value = int(log(divided_num, 2) * 100)
+				if divided_num != 0:
+					value = int(log(divided_num, 2) * 100)
+				else:
+					value = -100
 				file.write('A{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		elif line[0] == "G":
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['g' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
-				value = int(log(divided_num, 2) * 100)
+				if divided_num != 0:
+					value = int(log(divided_num, 2) * 100)
+				else:
+					value = -100
 				file.write('G{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		elif line[0] == "T":
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['t' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
-				value = int(log(divided_num, 2) * 100)
+				if divided_num != 0:
+					value = int(log(divided_num, 2) * 100)
+				else:
+					value = -100
 				file.write('T{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		else:
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['c' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
-				value = int(log(divided_num, 2) * 100)
+				if divided_num != 0:
+					value = int(log(divided_num, 2) * 100)
+				else:
+					value = -100
 				file.write('C{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 	file_read.close()
 	file.close()
