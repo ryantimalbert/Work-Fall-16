@@ -54,7 +54,7 @@ def compilation(connection, table):
 	    # Compiling conservation around ATG start codon
 	    nucleo_counts = {}
 	    nucleotides = ['a', 'g', 'c', 't']
-	    for i in range(-5 , 6):
+	    for i in range(-10 , 10):
 	    	for nucleo in nucleotides:
 			nucleo_counts[nucleo + str(i)] = 0
 	    if scaffSequence[cdsStart1 : cdsStart1 + 3].lower() == "atg" and (cdsStart1 - 5) >= 0 and (cdsStart1 + 6) <= len(scaffSequence):
@@ -73,6 +73,7 @@ def compilation(connection, table):
 	    			pass
 	    		count += 1
 	    total_runs += 1
+	    print(total_runs)
 
 	cursor1.close()
 
@@ -85,25 +86,25 @@ def compilation(connection, table):
 		line = line.split()
 		total_percentage = float(line[1])
 		if line[0] == "A":
-			for i in range(-5 , 6):
+			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['a' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
 				value = int(log(divided_num, 2) * 100)
 				file.write('A{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		elif line[0] == "G":
-			for i in range(-5 , 6):
+			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['g' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
 				value = int(log(divided_num, 2) * 100)
 				file.write('G{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		elif line[0] == "T":
-			for i in range(-5 , 6):
+			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['t' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
 				value = int(log(divided_num, 2) * 100)
 				file.write('T{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		else:
-			for i in range(-5 , 6):
+			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['c' + str(i)]) / total_runs
 				divided_num = current_percent / total_percentage
 				value = int(log(divided_num, 2) * 100)
