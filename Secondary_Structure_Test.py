@@ -132,5 +132,5 @@ def test_secondary(database, fasta, blast):
 	out_put.close()
 database = sys.argv[1]
 fasta = sys.argv[2]
-blast = sys.argv[1]
+blast = sys.argv[3]
 test_secondary(database, fasta, blast)
