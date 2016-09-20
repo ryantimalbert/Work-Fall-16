@@ -133,4 +133,4 @@ def test_secondary(database, fasta, blast):
 database = sys.argv[1]
 fasta = sys.argv[2]
 blast = sys.argv[1]
-test_secondary(database)
+test_secondary(database, fasta, blast)
