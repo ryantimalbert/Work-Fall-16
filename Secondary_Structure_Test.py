@@ -99,7 +99,7 @@ def test_secondary(database, fasta, blast):
 		tag = Id[2]
 		subprocess.call("module load EMBOSS/6.4.0", shell = True)
 		subprocess.call('garnier protein_sequence.txt secondary_protein_out', shell = True)
-		data_file = open('secondary_protein_out.txt', 'r')
+		data_file = open('secondary_protein_out', 'r')
 		data_file_line = data_file.readlines()
 		H_value = 0
 		E_value = 0
