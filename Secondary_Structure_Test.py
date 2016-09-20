@@ -21,7 +21,7 @@ def compile_feature_list2(transcript_file, blast_file, database):
 	data= {}
 	gene_codes[gene_code] = data
 	data['transcript'] = sequence
-	blast_file = open('ModelDataFiles/' + blast_file, 'r')
+	blast_file = open(blast_file, 'r')
 	blast_file = blast_file.readlines()
 	feature_codes = {}
 	for line in blast_file:
