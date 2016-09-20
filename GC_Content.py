@@ -42,5 +42,3 @@ name = sys.argv[1]
 connect= SQL.connect("gpdb05", "asalamov", "asalamov", name)
 transcript_con = Compile_Transcript(connect)
 total_breakdown(transcript_con) ## Used for conservation around ATG
-file = open('GC_Content_File.txt', 'a')
-file.write("{database} GC Content: {value}%\n".format(database = name, value = str(GC)))
