@@ -65,7 +65,7 @@ def compile_feature_list(transcript_file, blast_file, database):
 		ATG_Conservation_Val = 0
 		if pos_or_neg == "+":
 			cds_seq = sequence[start - 1: end]
-			if (start - 11) >= 0 and ((start - 1) + 9) < len(sequence)):
+			if (start - 11) >= 0 and ((start - 1) + 9) < len(sequence):
 				count = -10
 				while (start - 1) + count <= (start - 1) + 9:
 					nucleo = sequence[(start - 1) + count]
