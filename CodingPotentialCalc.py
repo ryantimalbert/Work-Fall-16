@@ -27,6 +27,11 @@ def compilation(connection, table):
 	index = 0
 	prev_scaffold = ""
 	total_runs = 0
+	nucleo_counts = {}
+	nucleotides = ['a', 'g', 'c', 't']
+	for i in range(-10 , 10):
+	    	for nucleo in nucleotides:
+			nucleo_counts[nucleo + str(i)] = 0
 	for row in query:
 	    scaffold = row[0]
 	    start = row[1]
@@ -52,14 +57,9 @@ def compilation(connection, table):
 
 
 	    # Compiling conservation around ATG start codon
-	    nucleo_counts = {}
-	    nucleotides = ['a', 'g', 'c', 't']
-	    for i in range(-10 , 10):
-	    	for nucleo in nucleotides:
-			nucleo_counts[nucleo + str(i)] = 0
 	    if scaffSequence[cdsStart1 : cdsStart1 + 3].lower() == "atg" and (cdsStart1 - 5) >= 0 and (cdsStart1 + 6) <= len(scaffSequence):
-	    	conservation_sequence = scaffSequence[(cdsStart1 - 5) : (cdsStart1 + 6)]
-	    	count = -5
+	    	conservation_sequence = scaffSequence[(cdsStart1 - 10) : (cdsStart1 + 10)]
+	    	count = -10
 	    	for nucleo in conservation_sequence:
 	    		if nucleo.lower() == "a":
 	    			nucleo_counts['a' + str(count)] += 1
@@ -72,6 +72,7 @@ def compilation(connection, table):
 	    		else:
 	    			pass
 	    		count += 1
+	    		print(count)
 	    total_runs += 1
 	    print(total_runs)
 
