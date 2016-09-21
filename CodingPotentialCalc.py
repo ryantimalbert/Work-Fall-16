@@ -74,7 +74,7 @@ def compilation(connection, table):
 	    		count += 1
 	    		print(count)
 	    total_runs += 1
-	    print(total_runs)
+	    # print(total_runs)
 
 	cursor1.close()
 
