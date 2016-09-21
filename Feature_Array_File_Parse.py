@@ -25,6 +25,7 @@ def compile_feature_list(transcript_file, blast_file, database):
 	file = open('ATG_Conservation/{database}.txt'.format(database = database), 'r')
 	lines = file.readlines()
 	ATG_Con_Index = {}
+	out_file = open('ATG_Con_Out_Neucr2', 'wb')
 	for line in lines:
 		line = line.split()
 		ATG_Con_Index[line[0]] = int(line[1])
@@ -98,7 +99,8 @@ def compile_feature_list(transcript_file, blast_file, database):
 					else:
 						pass
 					count -= 1
-	print(ATG_Conservation_Val)
+		out_file.write(str(gene_code) + ' ' + str(code_bool) + ' ' + str(ATG_Conservation_Val))
+	out_file.close()
 database = sys.argv[1]
 fasta = sys.argv[2]
 blast = sys.argv[3]
