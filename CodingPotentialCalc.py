@@ -72,9 +72,8 @@ def compilation(connection, table):
 	    		else:
 	    			pass
 	    		count += 1
-	    		print(count)
 	    total_runs += 1
-	    # print(total_runs)
+	    print(total_runs)
 
 	cursor1.close()
 
@@ -89,7 +88,9 @@ def compilation(connection, table):
 		if line[0] == "A":
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['a' + str(i)]) / total_runs
+				print(current_percent)
 				divided_num = current_percent / total_percentage
+				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
 				else:
@@ -98,7 +99,9 @@ def compilation(connection, table):
 		elif line[0] == "G":
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['g' + str(i)]) / total_runs
+				print(current_percent)
 				divided_num = current_percent / total_percentage
+				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
 				else:
@@ -107,7 +110,9 @@ def compilation(connection, table):
 		elif line[0] == "T":
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['t' + str(i)]) / total_runs
+				print(current_percent)
 				divided_num = current_percent / total_percentage
+				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
 				else:
@@ -116,7 +121,9 @@ def compilation(connection, table):
 		else:
 			for i in range(-10 , 10):
 				current_percent = float(nucleo_counts['c' + str(i)]) / total_runs
+				print(current_percent)
 				divided_num = current_percent / total_percentage
+				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
 				else:
