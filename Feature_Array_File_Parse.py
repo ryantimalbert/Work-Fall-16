@@ -22,6 +22,12 @@ def compile_feature_list(transcript_file, blast_file, database):
 	blast_file = open(blast_file, 'r')
 	blast_file = blast_file.readlines()
 	feature_codes = {}
+	file = open('ATG_Conservation/{database}.txt'.format(database = database), 'r')
+	lines = file.readlines()
+	ATG_Con_Index = {}
+	for line in lines:
+		line = line.split()
+		ATG_Con_Index[line[0]] = int(line[1])
 	for line in blast_file:
 		line = line.split()
 		code_bool = 0
@@ -59,37 +65,42 @@ def compile_feature_list(transcript_file, blast_file, database):
 		ATG_Conservation_Val = 0
 		if pos_or_neg == "+":
 			cds_seq = sequence[start - 1: end]
-			if (start - 11) >= 0 and (start + 9) < len(sequence):
+			if (start - 11) >= 0 and ((start - 1) + 9) < len(sequence)):
 				count = -10
-				while (start - 1) + count <= (start - 1) + 10:
+				while (start - 1) + count <= (start - 1) + 9:
 					nucleo = sequence[(start - 1) + count]
 					if nucleo.lower() == "a":
-						ATG_Conservation_Val += A_Value
+						ATG_Conservation_Val += ATG_Con_Index['A' + str(count)]
 					elif nucleo.lower() == "g":
-						ATG_Conservation_Val += G_Value
+						ATG_Conservation_Val += ATG_Con_Index['G' + str(count)]
 					elif nucleo.lower() == "t":
-						ATG_Conservation_Val += T_Value
+						ATG_Conservation_Val += ATG_Con_Index['T' + str(count)]
 					elif nucleo.lower() == "c":
-						ATG_Conservation_Val += C_Value
+						ATG_Conservation_Val += ATG_Con_Index['C' + str(count)]
 					else:
 						pass
 					count += 1
 
 		else:
 			### ATG Start Conservation feature
-			if ((start - 1) - 10) >= 0 and ((start - 1) + 10) < len(sequence):
+			if ((start - 1) - 10) >= 0 and ((start - 1) + 9) < len(sequence):
 				count = 9
 				while (start - 1) + count >= (start - 11):
 					nucleo = sequence[(start - 1) + count]
 					if nucleo.lower() == "a":
-						ATG_Conservation_Val += T_Value
+						ATG_Conservation_Val += ATG_Con_Index['T' + str(count)]
 					elif nucleo.lower() == "g":
-						ATG_Conservation_Val += C_Value
+						ATG_Conservation_Val += ATG_Con_Index['C' + str(count)]
 					elif nucleo.lower() == "t":
-						ATG_Conservation_Val += A_Value
+						ATG_Conservation_Val += ATG_Con_Index['A' + str(count)]
 					elif nucleo.lower() == "c":
-						ATG_Conservation_Val += G_Value
+						ATG_Conservation_Val += ATG_Con_Index['G' + str(count)]
 					else:
 						pass
 					count -= 1
+	print(ATG_Conservation_Val)
+database = sys.argv[1]
+fasta = sys.argv[2]
+blast = sys.argv[3]
+compile_feature_list(fasta, blast, database)
 
