@@ -1,4 +1,4 @@
-
+import sys
 def compile_feature_list(transcript_file, blast_file, database):
 	transcript_file = open(transcript_file, 'r')
 	transcript_file = transcript_file.readlines()
