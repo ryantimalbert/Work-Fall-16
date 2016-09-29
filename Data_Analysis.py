@@ -11,6 +11,7 @@ secondary_non_code = []
 secondary_code = []
 for line in Secondary_lines:
 	line = line.split()
+	print(line[2])
 	secondary_target.append(int(line[1]))
 	secondary_training.append([int(line[2])])
 	if line[1] == 0:
@@ -23,6 +24,7 @@ ATG_non_code = []
 ATG_code = []
 for line in ATG_lines:
 	line = line.split()
+	print(line[2])
 	ATG_target.append(int(line[1]))
 	ATG_training.append([int(line[2])])
 	if line[1] == 0:
