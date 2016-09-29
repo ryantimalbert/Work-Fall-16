@@ -4,7 +4,6 @@ import numpy
 ATG_Conservation = open('ATG_Con_Out_Neucr2', 'r')
 Secondary_Structure = open('secondary_out.txt', 'r')
 ATG_lines = ATG_Conservation.readlines()
-print(ATG_lines)
 Secondary_lines = Secondary_Structure.readlines()
 secondary_training = []
 secondary_target = []
@@ -12,25 +11,25 @@ secondary_non_code = []
 secondary_code = []
 for line in Secondary_lines:
 	line = line.split()
-	secondary_target.append(line[1])
-	secondary_training.append([line[2]])
+	secondary_target.append(int(line[1]))
+	secondary_training.append([int(line[2])])
 	if line[1] == 0:
-		secondary_non_code.append(line[2])
+		secondary_non_code.append(int(line[2]))
 	else:
-		secondary_code.append(line[2])
+		secondary_code.append(int(line[2]))
 ATG_training = []
 ATG_target = []
 ATG_non_code = []
 ATG_code = []
 for line in ATG_lines:
 	line = line.split()
-	ATG_target.append(line[1])
-	ATG_training.append([line[2]])
+	ATG_target.append(int(line[1]))
+	ATG_training.append([int(line[2])])
 	if line[1] == 0:
-		ATG_non_code.append(line[2])
+		ATG_non_code.append(int(line[2]))
 		print(line[2])
 	else:
-		ATG_code.append(line[2])
+		ATG_code.append(int(line[2]))
 print('ATG_Conservation')
 print('Coding_Sequences')
 print(sum(ATG_code)/float(len(ATG_code)))
