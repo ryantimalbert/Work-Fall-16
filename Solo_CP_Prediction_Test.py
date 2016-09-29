@@ -32,7 +32,7 @@ for genome in genomes:
 	function_results[genome].append(data)
 	clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
 	score = cross_validation.cross_val_score(clf, training_vector1, target_vector, cv = 5)
-	function_results.append(score.mean())
+	function_results[genome].append(score.mean())
 
 save_file = open('Compare_CP', 'wb')
 serial = pickle.dumps(function_results)
