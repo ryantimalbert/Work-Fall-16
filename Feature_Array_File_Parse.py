@@ -95,7 +95,7 @@ def compile_feature_list(transcript_file, blast_file, database):
 					if nucleo.lower() == "a":
 						ATG_Conservation_Val += ATG_Con_Index['T' + str((-1 - count))]
 					elif nucleo.lower() == "g":
-						ATG_Conservation_Val += ATG_Con_Index['C' + str((-1 - count)]
+						ATG_Conservation_Val += ATG_Con_Index['C' + str((-1 - count))]
 					elif nucleo.lower() == "t":
 						ATG_Conservation_Val += ATG_Con_Index['A' + str((-1 - count))]
 					elif nucleo.lower() == "c":
