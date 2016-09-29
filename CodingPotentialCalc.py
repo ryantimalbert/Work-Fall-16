@@ -32,6 +32,7 @@ def compilation(connection, table):
 	for i in range(-10 , 10):
 	    	for nucleo in nucleotides:
 			nucleo_counts[nucleo + str(i)] = 0
+		nucleo_counts[str(i)] = 0
 	for row in query:
 	    scaffold = row[0]
 	    start = row[1]
@@ -70,10 +71,15 @@ def compilation(connection, table):
 	    		elif nucleo.lower() == "c":
 	    			nucleo_counts['c' + str(count)] += 1
 	    		else:
+	    			print('here')
 	    			pass
+	    		nucleo_counts[str(count)] += 1
+	    		print(nucleo_counts[str(count)])
+	    		num = nucleo_counts['a' + str(count)] + nucleo_counts['c' + str(count)] + nucleo_counts['g' + str(count)] + nucleo_counts['t' + str(count)]
+	    		print(num)
 	    		count += 1
-	    total_runs += 1
-	    print(total_runs)
+	    	# total_runs += 1
+	    	# print(total_runs)
 
 	cursor1.close()
 
@@ -82,9 +88,6 @@ def compilation(connection, table):
 	file = open('ATG_Conservation/{database}.txt'.format(database = name), 'w+')
 	file_read = open('Total_Breakdown/{database}.txt'.format(database = name), 'r')
 	reading = file_read.readlines()
-	print(total_runs)
-	num = nucleo_counts['a' + str(1)] + nucleo_counts['c' + str(1)] + nucleo_counts['g' + str(1)] + nucleo_counts['t' + str(1)]
-	print(num)
 	for line in reading:
 		line = line.split()
 		total_percentage = float(line[1])
