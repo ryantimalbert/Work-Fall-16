@@ -74,9 +74,6 @@ def compilation(connection, table):
 	    			print('here')
 	    			pass
 	    		nucleo_counts[str(count)] += 1
-	    		print(nucleo_counts[str(count)])
-	    		num = nucleo_counts['a' + str(count)] + nucleo_counts['c' + str(count)] + nucleo_counts['g' + str(count)] + nucleo_counts['t' + str(count)]
-	    		print(num)
 	    		count += 1
 	    	# total_runs += 1
 	    	# print(total_runs)
@@ -92,10 +89,13 @@ def compilation(connection, table):
 		line = line.split()
 		total_percentage = float(line[1])
 		if line[0] == "A":
+			print(total_percentage)
+			print('A')
 			for i in range(-10 , 10):
-				current_percent = float(nucleo_counts['a' + str(i)]) / total_runs
+				current_percent = float(nucleo_counts['a' + str(i)]) / nucleo_counts[str(i)]
+				print(str(i))
 				print(current_percent)
-				divided_num = current_percent / total_percentage
+				divided_num = float(current_percent / total_percentage)
 				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
@@ -103,10 +103,13 @@ def compilation(connection, table):
 					value = -100
 				file.write('A{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		elif line[0] == "G":
+			print(total_percentage)
+			print('G')
 			for i in range(-10 , 10):
-				current_percent = float(nucleo_counts['g' + str(i)]) / total_runs
+				current_percent = float(nucleo_counts['g' + str(i)]) / nucleo_counts(str(i))
+				print(str(i))
 				print(current_percent)
-				divided_num = current_percent / total_percentage
+				divided_num = float(current_percent / total_percentage)
 				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
@@ -114,10 +117,13 @@ def compilation(connection, table):
 					value = -100
 				file.write('G{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		elif line[0] == "T":
+			print(total_percentage)
+			print('T')
 			for i in range(-10 , 10):
-				current_percent = float(nucleo_counts['t' + str(i)]) / total_runs
+				current_percent = float(nucleo_counts['t' + str(i)]) / nucleo_counts(str(i))
+				print(str(i))
 				print(current_percent)
-				divided_num = current_percent / total_percentage
+				divided_num = float(current_percent / total_percentage)
 				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
@@ -125,10 +131,13 @@ def compilation(connection, table):
 					value = -100
 				file.write('T{num} {conservation_val}\n'.format(num = i, conservation_val = value))
 		else:
+			print(total_percentage)
+			print('C')
 			for i in range(-10 , 10):
-				current_percent = float(nucleo_counts['c' + str(i)]) / total_runs
+				current_percent = float(nucleo_counts['c' + str(i)]) / nucleo_counts(str(i))
+				print(str(i))
 				print(current_percent)
-				divided_num = current_percent / total_percentage
+				divided_num = float(current_percent / total_percentage)
 				print(divided_num)
 				if divided_num != 0:
 					value = int(log(divided_num, 2) * 100)
