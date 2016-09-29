@@ -54,5 +54,4 @@ for name in function_results:
 	internal_array.append(data_array[0] * 100)
 	internal_array.append(data_array[1] * 100)
 	writer.writerow(internal_array)
-writer.close()
 file.close()
