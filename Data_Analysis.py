@@ -4,6 +4,7 @@ import numpy
 ATG_Conservation = open('ATG_Con_Out_Neucr2', 'r')
 Secondary_Structure = open('secondary_out.txt', 'r')
 ATG_lines = ATG_Conservation.readlines()
+print(ATG_lines)
 Secondary_lines = Secondary_Structure.readlines()
 secondary_training = []
 secondary_target = []
