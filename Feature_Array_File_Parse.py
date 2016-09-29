@@ -93,13 +93,13 @@ def compile_feature_list(transcript_file, blast_file, database):
 					if gene_code == '>TRINITY_DN13725_c0_g1_i1':
 						print(nucleo)
 					if nucleo.lower() == "a":
-						ATG_Conservation_Val += ATG_Con_Index['T' + str(count)]
+						ATG_Conservation_Val += ATG_Con_Index['T' + str((-1 - count))]
 					elif nucleo.lower() == "g":
-						ATG_Conservation_Val += ATG_Con_Index['C' + str(count)]
+						ATG_Conservation_Val += ATG_Con_Index['C' + str((-1 - count)]
 					elif nucleo.lower() == "t":
-						ATG_Conservation_Val += ATG_Con_Index['A' + str(count)]
+						ATG_Conservation_Val += ATG_Con_Index['A' + str((-1 - count))]
 					elif nucleo.lower() == "c":
-						ATG_Conservation_Val += ATG_Con_Index['G' + str(count)]
+						ATG_Conservation_Val += ATG_Con_Index['G' + str((-1 - count))]
 					else:
 						pass
 					count -= 1
