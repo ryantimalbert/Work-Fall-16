@@ -2,6 +2,8 @@ import MySQLdb as SQL
 import sys
 import subprocess
 def compile_feature_list2(transcript_file, blast_file, database):
+	### This just parses tje fasta file and compiles a list of coding vs. non_coding results 
+	### and a transcript
 	transcript_file = open(transcript_file, 'r')
 	transcript_file = transcript_file.readlines()
 	gene_codes = {}
@@ -99,12 +101,14 @@ def test_secondary(database, fasta, blast):
 		file.close()
 		coding = Id[1]
 		tag = Id[2]
+		### runs the garnier program on the sequence putting output in the file secondary_protein_out
 		subprocess.call('garnier protein_sequence.txt secondary_protein_out', shell = True)
 		data_file = open('secondary_protein_out', 'r')
 		data_file_line = data_file.readlines()
 		H_value = 0
 		E_value = 0
 		length_sequence = 0
+		### parses secondary_protein_out file and gets the H and E value and the total length
 		for data in data_file_line:
 			data = data.split()
 			if 'Residue' in data:
