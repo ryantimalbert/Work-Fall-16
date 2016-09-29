@@ -27,6 +27,7 @@ for line in ATG_lines:
 	ATG_training.append([line[2]])
 	if line[1] == 0:
 		ATG_non_code.append(line[2])
+		print(line[2])
 	else:
 		ATG_code.append(line[2])
 print('ATG_Conservation')
