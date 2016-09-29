@@ -106,7 +106,7 @@ def compilation(connection, table):
 			print(total_percentage)
 			print('G')
 			for i in range(-10 , 10):
-				current_percent = float(nucleo_counts['g' + str(i)]) / nucleo_counts(str(i))
+				current_percent = float(nucleo_counts['g' + str(i)]) / nucleo_counts[str(i)]
 				print(str(i))
 				print(current_percent)
 				divided_num = float(current_percent / total_percentage)
@@ -120,7 +120,7 @@ def compilation(connection, table):
 			print(total_percentage)
 			print('T')
 			for i in range(-10 , 10):
-				current_percent = float(nucleo_counts['t' + str(i)]) / nucleo_counts(str(i))
+				current_percent = float(nucleo_counts['t' + str(i)]) / nucleo_counts[str(i)]
 				print(str(i))
 				print(current_percent)
 				divided_num = float(current_percent / total_percentage)
@@ -134,7 +134,7 @@ def compilation(connection, table):
 			print(total_percentage)
 			print('C')
 			for i in range(-10 , 10):
-				current_percent = float(nucleo_counts['c' + str(i)]) / nucleo_counts(str(i))
+				current_percent = float(nucleo_counts['c' + str(i)]) / nucleo_counts[str(i)]
 				print(str(i))
 				print(current_percent)
 				divided_num = float(current_percent / total_percentage)
