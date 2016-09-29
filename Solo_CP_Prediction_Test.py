@@ -52,7 +52,7 @@ for genome in function_results:
 print(numpy.mean(Composite_data))
 print(numpy.std(Composite_data))
 print(numpy.mean(CP_data))
-print(numpy,std(CP_data))
+print(numpy.std(CP_data))
 # file = open('Scatter_CP_VS_Function.csv', 'wb')
 # writer = csv.writer(file, quoting=csv.QUOTE_ALL)
 # for name in function_results:
