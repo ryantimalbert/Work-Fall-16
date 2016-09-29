@@ -10,6 +10,8 @@ for genome in genomes:
 	genome = genome.replace('\n', '')
 	file = open('2ca94f869f91c32d28c5a7074b718204e67f2034/{database}.txt'.format(database = genome), 'rb')
 	data_Arrays = pickle.load(file)
+	training_vector = []
+	target_vector = []
 	for i in range(len(data_Arrays[0])):
 		if data_Arrays[0][i][0] > 800  and data_Arrays[1][i] == 0:
 			pass
