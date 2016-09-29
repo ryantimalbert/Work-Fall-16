@@ -8,7 +8,7 @@ genomes = database_file.readlines()
 function_results = {}
 for genome in genomes:
 	genome = genome.replace('\n', '')
-	file = open('~/features/2ca94f869f91c32d28c5a7074b718204e67f2034/{database}.txt'.format(database = genome), 'rb')
+	file = open('~/project-lyoko/features/2ca94f869f91c32d28c5a7074b718204e67f2034/{database}.txt'.format(database = genome), 'rb')
 	data_Arrays = pickle.load(file)
 	for i in range(len(data_Arrays[0])):
 		if data_Arrays[0][i][0] > 800  and data_Arrays[1][i] == 0:
