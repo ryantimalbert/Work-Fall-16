@@ -24,9 +24,9 @@ for genome in genomes:
 	for i in training_vector:
 		training_vector1.append([i[2]])
 	data1 = open('data/{database}.txt'.format(database = genome), 'r')
-	data1.close()
 	file.close()
 	data = pickle.load(data1)
+	data1.close()
 	data = data[0]
 	function_results[genome] = []
 	function_results[genome].append(data)
