@@ -13,12 +13,12 @@ for line in Secondary_lines:
 	line = line.split()
 	print(line)
 	print(line[2])
-	secondary_target.append(int(line[1]))
-	secondary_training.append([int(line[2])])
+	secondary_target.append(float(line[1]))
+	secondary_training.append([float(line[2])])
 	if line[1] == 0:
-		secondary_non_code.append(int(line[2]))
+		secondary_non_code.append(float(line[2]))
 	else:
-		secondary_code.append(int(line[2]))
+		secondary_code.append(float(line[2]))
 ATG_training = []
 ATG_target = []
 ATG_non_code = []
