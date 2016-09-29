@@ -11,6 +11,7 @@ secondary_non_code = []
 secondary_code = []
 for line in Secondary_lines:
 	line = line.split()
+	print(line)
 	print(line[2])
 	secondary_target.append(int(line[1]))
 	secondary_training.append([int(line[2])])
