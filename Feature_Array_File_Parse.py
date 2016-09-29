@@ -99,7 +99,7 @@ def compile_feature_list(transcript_file, blast_file, database):
 					else:
 						pass
 					count -= 1
-		out_file.write(str(gene_code) + ' ' + str(code_bool) + ' ' + str(ATG_Conservation_Val))
+		out_file.write(str(gene_code) + ' ' + str(code_bool) + ' ' + str(ATG_Conservation_Val) + '\n')
 	out_file.close()
 database = sys.argv[1]
 fasta = sys.argv[2]
