@@ -70,6 +70,8 @@ def compile_feature_list(transcript_file, blast_file, database):
 				count = -10
 				while (start - 1) + count <= (start - 1) + 9:
 					nucleo = sequence[(start - 1) + count]
+					if gene_code == '>TRINITY_DN13725_c0_g1_i1':
+						print(nucleo)
 					if nucleo.lower() == "a":
 						ATG_Conservation_Val += ATG_Con_Index['A' + str(count)]
 					elif nucleo.lower() == "g":
@@ -88,6 +90,8 @@ def compile_feature_list(transcript_file, blast_file, database):
 				count = 9
 				while (start - 1) + count >= (start - 11):
 					nucleo = sequence[(start - 1) + count]
+					if gene_code == '>TRINITY_DN13725_c0_g1_i1':
+						print(nucleo)
 					if nucleo.lower() == "a":
 						ATG_Conservation_Val += ATG_Con_Index['T' + str(count)]
 					elif nucleo.lower() == "g":
