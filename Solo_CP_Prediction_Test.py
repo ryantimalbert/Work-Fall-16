@@ -23,21 +23,30 @@ for genome in genomes:
 	training_vector1 = []
 	for i in training_vector:
 		training_vector1.append([i[2]])
-	data = open('data/{database}.txt'.format(database = genome), 'r')
-	data = pickle.load(data)
-	print(data)
+	data1 = open('data/{database}.txt'.format(database = genome), 'r')
+	data1.close()
+	file.close()
+	data = pickle.load(data1)
+	data = data[0]
+	function_results[genome] = []
+	function_results[genome].append(data)
+	clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+	score = cross_validation.cross_val_score(clf, training_vector1, target_vector, cv = 5)
+	function_results.append(score.mean())
 
+save_file = open('Compare_CP', 'wb')
+serial = pickle.dumps(function_results)
+save_file.write(serial)
+save_file.close()
 
-# file = open('Scatter.csv', 'wb')
-# 	writer = csv.writer(file, quoting=csv.QUOTE_ALL)
-# 	array = []
-# 	for name in data_readable:
-# 		internal_array = []
-# 		internal_array.append(name)
-# 		point = data_readable[name][0]
-# 		internal_array.append(point * 100)
-# 		point = data_readable[name][1]
-# 		internal_array.append(point * 100)
-# 		point = data_readable[name][3]
-# 		internal_array.append(point * 100)
-# 		writer.writerow(internal_array)
+file = open('Scatter_CP_VS_Function.csv', 'wb')
+writer = csv.writer(file, quoting=csv.QUOTE_ALL)
+for name in function_results:
+	internal_array = []
+	data_array = function_results[name]
+	internal_array.append(name)
+	internal_array.append(data_array[0] * 100)
+	internal_array.append(data_array[1] * 100)
+	writer.writerow(internal_array)
+writer.close()
+file.close()
