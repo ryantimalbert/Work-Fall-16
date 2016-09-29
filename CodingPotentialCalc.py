@@ -82,6 +82,9 @@ def compilation(connection, table):
 	file = open('ATG_Conservation/{database}.txt'.format(database = name), 'w+')
 	file_read = open('Total_Breakdown/{database}.txt'.format(database = name), 'r')
 	reading = file_read.readlines()
+	print(total_runs)
+	num = nucleo_counts['a' + str(1)] + nucleo_counts['c' + str(1)] + nucleo_counts['g' + str(1)] + nucleo_counts['t' + str(1)]
+	print(num)
 	for line in reading:
 		line = line.split()
 		total_percentage = float(line[1])
