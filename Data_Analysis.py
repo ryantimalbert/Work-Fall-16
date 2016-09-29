@@ -11,11 +11,9 @@ secondary_non_code = []
 secondary_code = []
 for line in Secondary_lines:
 	line = line.split()
-	print(line)
-	print(line[2])
 	secondary_target.append(float(line[1]))
 	secondary_training.append([float(line[2])])
-	if line[1] == 0:
+	if int(line[1]) == 0:
 		secondary_non_code.append(float(line[2]))
 	else:
 		secondary_code.append(float(line[2]))
@@ -25,20 +23,18 @@ ATG_non_code = []
 ATG_code = []
 for line in ATG_lines:
 	line = line.split()
-	print(line[2])
 	ATG_target.append(int(line[1]))
 	ATG_training.append([int(line[2])])
-	if line[1] == 0:
+	if int(line[1]) == 0:
 		ATG_non_code.append(int(line[2]))
-		print(line[2])
 	else:
 		ATG_code.append(int(line[2]))
 print('ATG_Conservation')
 print('Coding_Sequences')
-print(sum(ATG_code)/float(len(ATG_code)))
+print(numpy.mean(ATG_code))
 print(numpy.std(ATG_code))
 print('Non_Coding_Sequences')
-print(sum(ATG_non_code)/float(len(ATG_non_code)))
+print(numpy.mean(ATG_non_code))
 print(numpy.std(ATG_non_code))
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
 score = cross_validation.cross_val_score(clf, ATG_training, ATG_target, cv = 5)
