@@ -1,0 +1,99 @@
+#dbid	Lifestyle	more notes	defaultAnalysisTrack	Organism	TaxonomyID	NCBI_name
+Aaoar1	Unknown	possibly a saprophyte or weak pathogen	FilteredModels1	Aaosphaeria arxii CBS 175.79 v1.0	1450172	Aaosphaeria arxii CBS 175.79
+Aciri1_meta	acidophilic and thermophilic		FilteredModels1	Acidomyces richmondensis BFW	766039	Acidomyces richmondensis BFW
+Altal1	pathogenic and saprophytic		FilteredModels1	Alternaria alternata SRC1lrK2f v1.0	5599	Alternaria alternata
+Altbr1	pathogenic and saprophytic		External_gene_models	Alternaria brassicicola	29001	Alternaria brassicicola
+Amnli1	aquatic saprophyte		FilteredModels1	Amniculicola lignicola CBS 123094 v1.0	1392246	Amniculicola lignicola CBS 123094
+Aplpr1	saprophyte		FilteredModels1	Aplosporella prunicola CBS 121.167 v1.0	462254	Aplosporella prunicola
+Aulhe2	saprophyte		FilteredModels1	Aulographum hederae v2.0	1176131	Aulographum hederae CBS 113979
+Aurpu_var_mel1	saprophyte	Also found in arctic glaciers	FilteredModels1	Aureobasidium pullulans var. melanogenum CBS 110374	1043003	Aureobasidium melanogenum CBS 110374
+Aurpu_var_nam1	saprophyte	Also found in arctic glaciers	FilteredModels1	Aureobasidium pullulans var. namibiae CBS 147.97	1043004	Aureobasidium namibiae CBS 147.97
+Aurpu_var_pul1	saprophyte	Also found in arctic glaciers	FilteredModels1	Aureobasidium pullulans var. pullulans EXF-150	1043002	Aureobasidium pullulans EXF-150
+Aurpu_var_sub1	saprophyte	Also found in arctic glaciers	FilteredModels1	Aureobasidium pullulans var. subglaciale EXF-2481	1043005	Aureobasidium subglaciale EXF-2481
+Bauco1	saprophyte	Grows near alcohol vapors	FilteredModels1	Baudoinia compniacensis UAMH 10762 (4089826) v1.0	717646	Baudoinia compniacensis UAMH 10762
+Bimnz1	saprophyte	maybe a weak pathogen	FilteredModels2	Bimuria novae-zelandiae CBS 107.79 v1.0	1447943	Bimuria novae-zelandiae CBS 107.79
+Botdo1_1	plant pathogen		ExternalModels	Botryosphaeria dothidea	55169	Botryosphaeria dothidea
+Bysci1	saprophyte	maybe a weak pathogen	FilteredModels1	Byssothecium circinans CBS 675.92 v1.0	147558	Byssothecium circinans
+Cenge3	mycorrhizal		FilteredModels1	Cenococcum geophilum 1.58 v2.0	794803	Cenococcum geophilum 1.58
+Cerzm1	plant pathogen		FilteredModels1	Cercospora zeae-maydis v1.0	717836	Cercospora zeae-maydis SCOH1-5
+Clafu1	plant pathogen		ExternalModels	Cladosporium fulvum v1.0	5499	Passalora fulva
+Clael1	possibly pathogen or saprobe		FilteredModels1	Clathrospora elynae CBS 161.51 v1.0	706981	Clathrospora elynae
+Cocca1	plant pathogen		FilteredModels1	Cochliobolus carbonum 26-R-13 v1.0	930089	Bipolaris zeicola 26-R-13
+CocheC5_3	plant pathogen		FilteredModels4	Cochliobolus heterostrophus C5 v2.0	701091	Bipolaris maydis C5
+Coclu2	pathogen		FilteredModels1	Cochliobolus lunatus m118 v2.0	977863	Curvularia lunata m118
+Cocmi1	plant pathogen		FilteredModels1	Cochliobolus miyabeanus ATCC 44560 v1.0	930090	Bipolaris oryzae ATCC 44560
+Cocsa1	plant pathogen		FilteredModels1	Cochliobolus sativus ND90Pr v1.0	665912	Bipolaris sorokiniana ND90Pr
+Cocvi1	plant pathogen		FilteredModels1	Cochliobolus victoriae FI3 v1.0	930091	Bipolaris victoriae FI3
+Corca1	plant pathogen		FilteredModels1	Corynespora cassiicola CCP v1.0	1448308	Corynespora cassiicola Philippines
+Cucbe1	saprophyte		FilteredModels1	Cucurbitaria berberidis CBS 394.84 v1.0	45142	Cucurbitaria berberidis
+Delco1	saprophyte	found on dung	FilteredModels1	Delitschia confertaspora ATCC 74209 v1.0	1504671	Delitschia confertaspora
+Didex1	plant pathogen	sometimes sarophytic and endophytic	FilteredModels1	Didymella exigua CBS 183.55 v1.0	1150837	Didymella exigua CBS 183.55
+Disac1	pathogen		FilteredModels2	Dissoconium aciculare v1.0	1314786	Dissoconium aciculare CBS 342.82
+Dotsy1	plant pathogen		FilteredModels1	Dothidotthia symphoricarpi v1.0	1392245	Dothidotthia symphoricarpi CBS 119687
+Dotse1	plant pathogen		FilteredModels1	Dothistroma septosporum NZE10 v1.0	675120	Dothistroma septosporum NZE10
+Erebi1	saprophyte	found on dung	FilteredModels1	Eremomyces bilateralis CBS 781.70 v1.0	1392243	Eremomyces bilateralis CBS 781.70
+Glost2	saprophyte		FilteredModels1	Glonium stellatum CBS 207.34 v1.0	574774	Glonium stellatum
+Hyspu1_1	saprophyte		ExternalModels	Hysterium pulicare	100027	Hysterium pulicare
+Karrh1	saprophyte		FilteredModels1	Karstenula rhodostoma CBS 690.94 v1.0	1392251	Karstenula rhodostoma CBS 690.94
+Lenfl1	aquatic saprophyte		FilteredModels1	Lentithecium fluviatile v1.0	1168545	Lentithecium fluviatile CBS 122367
+Leppa1	possibly aquatic saprophyte		FilteredModels1	Lepidopterella palustris v1.0	1314670	Lepidopterella palustris CBS 459.81
+Lepmu1	plant pathogen		ExternalModels	Leptosphaeria maculans	985895	Leptosphaeria maculans JN3
+Linin1	aquatic saprophyte		FilteredModels1	Lindgomyces ingoldianus ATCC 200398 v1.0	1395130	Lindgomyces ingoldianus
+Lopma1	saprophyte		FilteredModels1	Lophiostoma macrostomum v1.0	1314788	Lophiostoma macrostomum CBS 122681
+Lopmy1	saprophyte		FilteredModels1	Lophium mytilinum CBS 269.34 v1.0	1447936	Lophium mytilinum CBS 269.34
+Macph1	plant pathogen		ExternalModels	Macrophomina phaseolina MS6	1126212	Macrophomina phaseolina MS6
+Macan1	saprophyte		FilteredModels1	Macroventuria anomochaeta CBS 525.71 v1.0	1447947	Macroventuria anomochaeta CBS 525.71
+Maseb1	saprophyte		FilteredModels1	Massarina eburnea CBS 473.64 v1.0	1395130	Massarina eburnea CBS 473.64
+Melpu1	saprophyte		FilteredModels1	Melanomma pulvis-pyrius v1.0	1314802	Melanomma pulvis-pyrius CBS 109.77
+Mycfi2	plant pathogen		FrozenGeneCatalog_20100402	Mycosphaerella fijiensis v2.0	383855	Pseudocercospora fijiensis CIRAD86
+Mycgr3	plant pathogen		FilteredModels1	Mycosphaerella graminicola v2.0	336722	Zymoseptoria tritici IPO323
+Myrdu1	insect pathogen or saprophyte		FilteredModels1	Myriangium duriaei CBS 260.36 v1.0	1168546	Myriangium duriaei CBS 260.36
+Mytre1	saprophyte	maybe a weak pathogen	FilteredModels1	Mytilinidion resinicola CBS 304.34 v1.0	574789	Mytilinidion resinicola
+Neopa1	plant pathogen	endophyte	ExternalModels	Neofusicoccum parvum UCRNP2	1287680	Neofusicoccum parvum UCRNP2
+Ophdi1	pathogenic and saprophytic		FilteredModels1	Ophiobolus disseminans CBS 113818 v1.0	1469910	Ophiobolus disseminans
+Parsp1	saprophyte and weak pathogen		FilteredModels1	Paraconiothyrium sporulosum AP3s5-JAC2a v1.0	1460663	Paraphaeosphaeria sporulosa
+Patat1	saprophyte		FilteredModels1	Patellaria atrata v1.0	1346257	Patellaria atrata CBS 101060
+Photr1	plant pathogen		FilteredModels1	Phoma tracheiphila IPT5 v1.0	1408161	Plenodomus tracheiphilus IPT5
+Phycit1	plant pathogen		FilteredModels1	Phyllosticta citriasiana v1.0	595635	Phyllosticta citriasiana
+Pieho1_1	human hair pathogen		FilteredModels1	Piedraia hortae v1.1	1314780	Piedraia hortae CBS 480.64
+Plesi1	saprophyte		FilteredModels1	Pleomassaria siparia v1.0	1314801	Pleomassaria siparia CBS 279.74
+Polci1	"Sooty mold, growing on leaves, associated with honeydew excreted by sucking insects"		FilteredModels1	Polychaeton citri v1.0	705562	Polychaeton citri
+Polfu1	saprophyte		FilteredModels1	Polyplosphaeria fusca CBS 125425 v1.0	682080	Polyplosphaeria fusca
+Psehy1	Hyperparasite on rust fungi		FilteredModels1	Pseudovirgaria hyperparasitica CBS 121739 v1.0	470096	Pseudovirgaria hyperparasitica
+Pyrsp1	pathogenic and saprophytic		FilteredModels1	Pyrenochaeta sp. DS3sAY3a v1.0	765867	Pyrenochaeta sp. DS3sAY3a
+Pyrtt1	plant pathogen		ExternalModels	Pyrenophora teres f. teres	861557	Pyrenophora teres f. teres 0-1
+Pyrtr1	plant pathogen		broadModels	Pyrenophora tritici-repentis	45151	Pyrenophora tritici-repentis
+Rhyru1_1	saprophyte	maybe a weak pathogen	ExternalModels	Rhytidhysteron rufulum	37885	Rhytidhysteron rufulum
+Sacpr1	plant pathogen		FilteredModels1	Saccharata proteae CBS 121410 v1.0	1314787	Saccharata proteae CBS 121410
+Sepmu1	plant pathogen		FilteredModels1	Septoria musiva SO2202 v1.0	692275	Sphaerulina musiva SO2202
+Seppo1	plant pathogen		FilteredModels1	Septoria populicola v1.0	215467	Sphaerulina populicola
+Settu1	plant pathogen		FilteredModels1	Setosphaeria turcica Et28A v1.0	671987	Setosphaeria turcica Et28A
+Spofi1	saprophyte	found on dung	FilteredModels1	Sporormia fimetaria v1.0	1340428	Sporormia fimetaria CBS 119925
+Stano2	plant pathogen		ExternalModels	Stagonospora nodorum SN15 v2.0	321614	Phaeosphaeria nodorum SN15
+Stasp1	plant pathogen		FilteredModels1	Stagonospora sp. SRC1lsM3a v1.0	765868	Stagonospora sp. SRC1lsM3a
+Ternu1	plant pathogen		FilteredModels1	Teratosphaeria nubilosa CBS 116005 v1.0	161662	Teratosphaeria nubilosa
+Totfu1	saprophyte		FilteredModels1	Tothia fuscella CBS 130266 v1.0	1048955	Tothia fuscella
+Trepe1	aquatic saprophyte		FilteredModels1	Trematosphaeria pertusa CBS 122368 v1.0	1447946	Trematosphaeria pertusa CBS 122368
+Tribi1	saprophyte	found on dung	FilteredModels1	Trichodelitschia bisporula CBS 262.69 v1.0	703511	Trichodelitschia bisporula
+Tryvi1	"tropical, lichenized fungus"		FilteredModels1	Trypethelium eluteriae v1.0	1048519	Trypethelium virens
+Venpi1	plant pathogen		ExternalModels	Venturia pirina	415593	Venturia pirina
+Venin1	plant pathogen		ExternalModels	Venturia inaequalis	5025	Venturia inaequalis
+Veren1	aquatic saprophyte		FilteredModels1	Verruculina enalia CBS 304.66 v1.0	85948	Didymosphaeria enalia
+Wesor1	saprophyte		FilteredModels1	Westerdykella ornata CBS 379.55 v1.0	318751	Westerdykella ornata
+Zasce1	saprophyte	Grows near alcohol vapors	FilteredModels1	Zasmidium cellare ATCC 36951 v1.0	1080233	Zasmidium cellare ATCC 36951
+Zoprh1	saprophyte		FilteredModels1	Zopfia rhizophila v1.0	1314779	Zopfia rhizophila CBS 207.26
+Zymar1	plant pathogen		ExternalModels	Zymoseptoria ardabiliae STIR04_1.1.1	985147	Zymoseptoria ardabiliae STIR04_1.1.1
+Zymps1	plant pathogen		ExternalModels	Zymoseptoria pseudotritici STIR04_2.2.1	985140	Zymoseptoria pseudotritici STIR04_2.2.1
+Rhili1	possibly saprophytic		FilteredModels1	Rhizodiscina lignyota CBS 133067 v1.0	1504668	Rhizodiscina lignyota
+Setho1	plant pathogen		FilteredModels1	Setomelanomma holmii CBS 110217 v1.0	210430	Setomelanomma holmii
+Decga1	aquatic saprophyte		FilteredModels1	Decorospora gaudefroyi v1.0	184978	Decorospora gaudefroyi
+Lizem1	possibly saprophytic		GeneCatalog_2015_04_29_17_23	Lizonia empirigonia CBS 542.76 v1.0	1496277	Lizonia empirigonia
+##OUTGROUP						
+Pyrco1	saprophyte		ExternalModels	Pyronema confluens CBS100304	1076935	Pyronema omphalodes CBS 100304
+Tubme1	black truffle		Genoscope_genes	Tuber melanosporum from Genoscope	656061	Tuber melanosporum Mel28
+Neucr2	bread mold		BroadModels	Neurospora crassa OR74A v2.0	367110	Neurospora crassa OR74A
+Fusgr1	plant pathogen		ExternalModels	Fusarium graminearum v1.0	5518	Fusarium graminearum
+Aspnid1			AspGD_genes	Aspergillus nidulans from AspGD	162425	Aspergillus nidulans
+Cocim1	human pathogen		BroadModels	Coccidioides immitis RS 	246410	Coccidioides immitis RS
+Botci1	plant pathogen		ExternalModels	Botrytis cinerea v1.0	40559	Botrytis cinerea
+Sclsc1	plant pathogen		ExternalModels	Sclerotinia sclerotiorum v1.0	665079	Sclerotinia sclerotiorum 1980 UF-70
