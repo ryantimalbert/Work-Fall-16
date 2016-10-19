@@ -44,8 +44,11 @@ clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
 mean = weight_array.mean()
 standard = weight_array.std()
+print(mean)
+print(standard)
 valued_p_fams = []
 for count in range(len(features)):
+	print(weight_array[count])
 	if weight_array[count] >= mean:
 		valued_p_fams.append(features[count][0])
 		print('Yes')
