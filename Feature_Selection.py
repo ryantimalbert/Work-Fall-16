@@ -42,8 +42,14 @@ for genome in Genomes:
 clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
-print(weight_array.mean())
-print(weight_array.std())
+mean = weight_array.mean()
+standard = weight_array.std()
+valued_p_fams = []
+for count in range(len(features)):
+	if weight_array[count] >= mean + standard:
+		valued_p_fams.append(features[count][0])
+		print('Yes')
+
 
 
 
