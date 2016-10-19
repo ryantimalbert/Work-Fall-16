@@ -42,7 +42,9 @@ for genome in Genomes:
 clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
-print(weight_array)
+for num in weight_array:
+	if num != 0:
+		print('Yes')
 
 
 
