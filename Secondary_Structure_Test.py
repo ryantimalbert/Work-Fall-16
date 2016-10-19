@@ -124,7 +124,7 @@ def test_secondary(database, fasta, blast):
 				if len(data[num]) > 2:
 					E = data[num]
 					digit_length = len(E)
-					H_value = int(E[2 : digit_length])
+					E_value = int(E[2 : digit_length])
 				else:
 					E_value = int(data[num + 1])
 			if 'Total_length:' in data:

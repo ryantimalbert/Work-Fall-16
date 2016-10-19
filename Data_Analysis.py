@@ -17,29 +17,29 @@ for line in Secondary_lines:
 		secondary_non_code.append(float(line[2]))
 	else:
 		secondary_code.append(float(line[2]))
-ATG_training = []
-ATG_target = []
-ATG_non_code = []
-ATG_code = []
-for line in ATG_lines:
-	line = line.split()
-	ATG_target.append(int(line[1]))
-	ATG_training.append([int(line[2])])
-	if int(line[1]) == 0:
-		ATG_non_code.append(int(line[2]))
-	else:
-		ATG_code.append(int(line[2]))
-print('ATG_Conservation')
-print('Coding_Sequences')
-print(numpy.mean(ATG_code))
-print(numpy.std(ATG_code))
-print('Non_Coding_Sequences')
-print(numpy.mean(ATG_non_code))
-print(numpy.std(ATG_non_code))
-clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, ATG_training, ATG_target, cv = 5)
-print(score.mean())
-print(score.std())
+# ATG_training = []
+# ATG_target = []
+# ATG_non_code = []
+# ATG_code = []
+# for line in ATG_lines:
+# 	line = line.split()
+# 	ATG_target.append(int(line[1]))
+# 	ATG_training.append([int(line[2])])
+# 	if int(line[1]) == 0:
+# 		ATG_non_code.append(int(line[2]))
+# 	else:
+# 		ATG_code.append(int(line[2]))
+# print('ATG_Conservation')
+# print('Coding_Sequences')
+# print(numpy.mean(ATG_code))
+# print(numpy.std(ATG_code))
+# print('Non_Coding_Sequences')
+# print(numpy.mean(ATG_non_code))
+# print(numpy.std(ATG_non_code))
+# clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+# score = cross_validation.cross_val_score(clf, ATG_training, ATG_target, cv = 5)
+# print(score.mean())
+# print(score.std())
 
 print('Secondary_Structure')
 print('Coding_Sequences')
