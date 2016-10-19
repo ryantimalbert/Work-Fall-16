@@ -44,7 +44,7 @@ clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
 for num in weight_array:
 	if num != 0:
-		print('Yes')
+		print(num)
 
 
 
