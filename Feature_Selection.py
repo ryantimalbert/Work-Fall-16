@@ -33,6 +33,7 @@ for line in lines[1::]:
 target = []
 features = []
 for genome in Genomes:
+	print(Genomes[genome])
 	target.append(Genomes[genome][1])
 	features.append(Genomes[genome][0])
 clf = ExtraTreesClassifier()
