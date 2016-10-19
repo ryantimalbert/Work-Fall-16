@@ -44,6 +44,8 @@ clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
 valued_p_fam = []
 count = 0
+print(len(features))
+print(len(weight_array))
 for num in weight_array:
 	if num != 0:
 	    valued_p_fam.append(features[count][0])	
