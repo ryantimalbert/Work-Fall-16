@@ -44,7 +44,7 @@ clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
 valued_p_fam = []
 count = 0
-print(len(features))
+print(len(PFAM_Parse))
 print(len(weight_array))
 for num in weight_array:
 	if num != 0:
