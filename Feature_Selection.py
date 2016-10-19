@@ -42,9 +42,12 @@ for genome in Genomes:
 clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
+valued_p_fam = []
+count = 0
 for num in weight_array:
 	if num != 0:
-		print(num)
+	    valued_p_fam.append(features[count][0])	
+	count += 1	
 
 
 
