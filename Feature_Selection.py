@@ -21,6 +21,7 @@ life_style = sys.argv[2]
 style = open(life_style, 'r')
 lines = style.readlines()
 count = 0
+checked_genomes = []
 for line in lines[1::]:
 	line = line.split()
 	genome = line[0]
@@ -28,14 +29,16 @@ for line in lines[1::]:
 		continue;
 	if 'saprophyte' in line or 'saprophytic' in line:
 		Genomes[genome].append(1)
+		checked_genomes.append(genome)
 	else:
 		Genomes[genome].append(0)
+		checked_genomes.append(genome)
 target = []
 features = []
 for genome in Genomes:
-	print(Genomes[genome])
-	target.append(Genomes[genome][1])
-	features.append(Genomes[genome][0])
+	if genome in checked_genomes:
+		target.append(Genomes[genome][1])
+		features.append(Genomes[genome][0])
 clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
