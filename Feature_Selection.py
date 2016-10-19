@@ -45,8 +45,6 @@ weight_array = clf.feature_importances_
 for num in weight_array:
 	if num != 0:
 		print(num)
-	else:
-		print('NOT')
 
 
 
