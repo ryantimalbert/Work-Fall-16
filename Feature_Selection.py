@@ -46,7 +46,7 @@ mean = weight_array.mean()
 standard = weight_array.std()
 valued_p_fams = []
 for count in range(len(features)):
-	if weight_array[count] >= mean + standard:
+	if weight_array[count] >= mean:
 		valued_p_fams.append(features[count][0])
 		print('Yes')
 
