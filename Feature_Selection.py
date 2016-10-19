@@ -43,6 +43,7 @@ clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
 print(weight_array.mean())
+print(weight_array.std())
 
 
 
