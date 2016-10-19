@@ -50,7 +50,6 @@ for num in weight_array:
 	    valued_p_fam.append(PFAM_Parse[count][0])	
 	count += 1	
 print(valued_p_fam)
-
-
+print(len(valued_p_fam))
 
 
