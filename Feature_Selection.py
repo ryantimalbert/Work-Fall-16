@@ -121,6 +121,7 @@ for num in weight_array2:
 	count += 1
 print(len(new_features[0]))
 print(len(new_features2[0]))
+print(len(target))
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
 score = cross_validation.cross_val_score(clf, features, target, cv = 15)
