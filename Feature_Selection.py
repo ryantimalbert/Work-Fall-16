@@ -59,6 +59,7 @@ for genome in Genomes:
 		features.append(Genomes[genome][0])
 		print(genome)
 		print(features[0][0:20])
+		break;
 
 target2 = []
 features2 = []
