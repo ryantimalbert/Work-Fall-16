@@ -83,7 +83,7 @@ svc = SVC()
 # classifications
 rfecv = RFECV(estimator=svc, step=1, cv=5,
               scoring='accuracy')
-rfecv.fit(X, y)
+rfecv.fit(features, target)
 print(rfecv.n_features_)
 print(rfecv.ranking_)
 
