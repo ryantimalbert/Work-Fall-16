@@ -159,6 +159,7 @@ print(len(new_features[0]))
 print(len(new_features2[0]))
 print(len(target))
 
+print(features)
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
 score = cross_validation.cross_val_score(clf, features, target, cv = 15)
 print(score.mean())
