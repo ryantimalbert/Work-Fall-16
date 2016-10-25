@@ -144,11 +144,11 @@ for num in weight_array2:
 		for i in features:
 			new_features2[count2].append(features2[count2][count])
 			count2 += 1
-		else:
-			count2 = 0
-			for i in features:
-				bad_features2[count2].append(features2[count2][count])
-				count2 += 1
+	else:
+		count2 = 0
+		for i in features:
+			bad_features2[count2].append(features2[count2][count])
+			count2 += 1
 	count += 1
 print(len(new_features[0]))
 print(len(new_features2[0]))
