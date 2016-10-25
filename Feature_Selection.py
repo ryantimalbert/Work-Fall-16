@@ -71,6 +71,9 @@ for genome in Cluster_Genome:
 #### Print used pfamId's
 clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
+model = SelectFromModel(clf, prefit=True)
+feature_new = model.transform(features)
+print(len(feature_new))
 weight_array = clf.feature_importances_
 valued_p_fam = []
 new_weights = []
@@ -81,8 +84,8 @@ for num in weight_array:
 	    valued_p_fam.append(PFAM[count][0])
 	    new_weights.append(num)
 	count += 1
-print(PFAM[0][0])
-print(weight_array[0])
+# print(PFAM[0][0])
+# print(weight_array[0])
 # print(valued_p_fam)
 # print(len(valued_p_fam))
 # print(len(weight_array))
@@ -121,12 +124,12 @@ for count in range(len(new_weights2)):
 print(mean1)
 
 for count in range(len(weight_array)):
-	if PFAM[count][0] == 'PF00759.14':
+	if PFAM[count][0] == 'PF00006.20':
 		print(weight_array[count])
 
-for count in range(len(weight_array2)):
-	if Cluster_Parse[count][0] == '8010':
-		print(weight_array2[count])
+# for count in range(len(weight_array2)):
+# 	if Cluster_Parse[count][0] == '8010':
+# 		print(weight_array2[count])
 # new_features = []
 # for i in features:
 # 	new_features.append([])
