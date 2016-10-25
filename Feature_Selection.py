@@ -86,6 +86,9 @@ for num in weight_array:
 	    new_weights.append(num)
 	count += 1
 
+for p_fam in valued_p_fam:
+	print(p_fam)
+print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 ## Print used ClusterId's
 clf2 = ExtraTreesClassifier()
 clf2 = clf.fit(features2, target2)
@@ -97,9 +100,11 @@ for num in weight_array2:
 	if num != 0:
 	    valued_cluster.append(Cluster_Parse[count][0])
 	    new_weights2.append(num)
-	count += 1	
+	count += 1
 
-
+for cluster in valued_cluster:
+	print(cluster)
+print('===================================================================')
 
 mean1 = numpy.mean(new_weights)
 std1 = numpy.std(new_weights)
