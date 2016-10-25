@@ -85,12 +85,6 @@ for num in weight_array:
 	    valued_p_fam.append(PFAM[count][0])
 	    new_weights.append(num)
 	count += 1
-# print(PFAM[0][0])
-# print(weight_array[0])
-for pfam in valued_p_fam:
-	print(pfam)
-print(len(valued_p_fam))
-print(len(weight_array))
 
 ## Print used ClusterId's
 clf2 = ExtraTreesClassifier()
@@ -104,12 +98,7 @@ for num in weight_array2:
 	    valued_cluster.append(Cluster_Parse[count][0])
 	    new_weights2.append(num)
 	count += 1	
-# print(Cluster_Parse[0][0])
-# print(weight_array2[0])
-for cluster in valued_cluster:
-	print(cluster)
-print(len(valued_cluster))
-print(len(weight_array2))
+
 
 
 mean1 = numpy.mean(new_weights)
@@ -117,34 +106,34 @@ std1 = numpy.std(new_weights)
 for count in range(len(new_weights)):
 	if new_weights[count] >= mean1 + (2 * std1):
 		print(valued_p_fam[count])
-# print(mean1)
 
 mean1 = numpy.mean(new_weights2)
 std1 = numpy.std(new_weights2)
 for count in range(len(new_weights2)):
 	if new_weights2[count] >= mean1 + (2 * std1):
 		print(valued_cluster[count])
-print(mean1)
 
-for count in range(len(weight_array)):
-	if PFAM[count][0] == 'PF00006.20':
-		print(weight_array[count])
-
-for count in range(len(weight_array2)):
-	if Cluster_Parse[count][0] == '8010':
-		print(weight_array2[count])
 new_features = []
+bad_features = []
 for i in features:
 	new_features.append([])
+	bad_features.append([])
 new_features2 = []
+bad_features2 = []
 for i in features2:
 	new_features2.append([])
+	bad_features2.append([])
 count = 0
 for num in weight_array:
 	if num != 0:
 		count2 = 0
 		for i in features:
 			new_features[count2].append(features[count2][count])
+			count2 += 1
+	else :
+		count2 = 0
+		for i in features:
+			bad_features[count2].append(features[count2][count])
 			count2 += 1
 	count += 1
 count = 0
@@ -154,19 +143,26 @@ for num in weight_array2:
 		for i in features:
 			new_features2[count2].append(features2[count2][count])
 			count2 += 1
+		else:
+			count2 = 0
+			for i in features:
+				bad_features2[count2].append(features2[count2][count])
+				count2 += 1
 	count += 1
 print(len(new_features[0]))
 print(len(new_features2[0]))
+print(len(bad_features[0]))
+print(len(bad_features2[0]))
 print(len(target))
 
-print(features)
+
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, features, target, cv = 15)
+score = cross_validation.cross_val_score(clf, bad_features, target, cv = 15)
 print(score.mean())
 print(score.std())
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, features2, target2, cv = 15)
+score = cross_validation.cross_val_score(clf, bad_features2, target2, cv = 15)
 print(score.mean())
 print(score.std())
 
