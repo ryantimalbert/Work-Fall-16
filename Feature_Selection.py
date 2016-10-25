@@ -123,22 +123,22 @@ print(len(new_features[0]))
 print(len(new_features2[0]))
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, features, target, cv = 30)
+score = cross_validation.cross_val_score(clf, features, target, cv = 15)
 print(score.mean())
 print(score.std())
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, features2, target2, cv = 30)
+score = cross_validation.cross_val_score(clf, features2, target2, cv = 15)
 print(score.mean())
 print(score.std())
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, new_features, target, cv = 30)
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, new_features2, target2, cv = 30)
+score = cross_validation.cross_val_score(clf, new_features2, target2, cv = 15)
 print(score.mean())
 print(score.std())
 
@@ -148,7 +148,7 @@ for count in range(len(new_features)):
 	combined.append(lis)
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, combined, target2, cv = 30)
+score = cross_validation.cross_val_score(clf, combined, target2, cv = 15)
 print(score.mean())
 print(score.std())
 
