@@ -84,7 +84,7 @@ clf2 = clf.fit(features2, target2)
 weight_array2 = clf2.feature_importances_
 valued_cluster = []
 count = 0
-for num in weight_array:
+for num in weight_array2:
 	if num != 0:
 	    valued_cluster.append(Cluster_Parse[count][0])	
 	count += 1	
