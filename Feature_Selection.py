@@ -1,5 +1,7 @@
 import sys
 from sklearn.ensemble import ExtraTreesClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn import svm, cross_validation, preprocessing
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
 lines = table.readlines()
@@ -65,34 +67,71 @@ for genome in Cluster_Genome:
 		target2.append(Genomes[genome][1])
 		features2.append(Cluster_Genome[genome][0])
 
+#### Print used pfamId's
 clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
 weight_array = clf.feature_importances_
 valued_p_fam = []
 count = 0
 PFAM = PFAM_Parse[1 ::]
-print(PFAM[0][0])
 for num in weight_array:
 	if num != 0:
 	    valued_p_fam.append(PFAM[count][0])	
 	count += 1	
 # print(valued_p_fam)
-# print(len(valued_p_fam))
-# print(weight_array)
+print(len(valued_p_fam))
+print(weight_array)
 
+### Print used ClusterId's
 clf2 = ExtraTreesClassifier()
 clf2 = clf.fit(features2, target2)
 weight_array2 = clf2.feature_importances_
 valued_cluster = []
 count = 0
-
-print(Cluster_Parse[0][0])
 for num in weight_array2:
 	if num != 0:
 	    valued_cluster.append(Cluster_Parse[count][0])
 	count += 1	
 # print(valued_cluster)
-# print(len(valued_cluster))
-# print(len(weight_array2))
+print(len(valued_cluster))
+print(len(weight_array2))
+
+
+new_features = []
+for i in features:
+	new_features.append([])
+new_features2 = []
+for i in features2:
+	new_features2.append([])
+count = 0
+for num in weight_array:
+	if num != 0:
+		count2 = 0
+		for i in features:
+			new_features[count2].append(features[count2][count])
+			count2 += 1
+	count += 1
+count = 0
+for num in weight_array2:
+	if num != 0:
+		count2 = 0
+		for i in features:
+			new_features2[count2].append(features2[count2][count])
+			count2 += 1
+	count += 1
+print(len(new_features[0]))
+print(len(new_features2[0]))
+
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, features, target, cv = 5)
+print(score.mean())
+print(score.std())
+
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, features2, target2, cv = 5)
+print(score.mean())
+print(score.std())
+
+
 
 
