@@ -122,7 +122,7 @@ for count in range(len(weight_array)):
 		print(weight_array[count])
 
 for count in range(len(weight_array2)):
-	if Cluster_Parse[count][0] == 'PF00723.16':
+	if Cluster_Parse[count][0] == '8010':
 		print(weight_array2[count])
 # new_features = []
 # for i in features:
