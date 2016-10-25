@@ -43,6 +43,8 @@ for line in lines[1::]:
 	Cluster_Parse.append([line[0], line[1 ::]])
 ### 98 different features for selection
 index = lines[0]
+print(len(index))
+print(len(Cluster_Parse[0][1]))
 features = Cluster_Parse
 Cluster_Genome = {}
 for count in range(len(index)):
@@ -79,7 +81,7 @@ print(valued_p_fam)
 print(len(valued_p_fam))
 
 clf2 = ExtraTreesClassifier()
-clf2 = clf.fit(features, target)
+clf2 = clf.fit(features2, target2)
 weight_array2 = clf2.feature_importances_
 valued_cluster = []
 count = 0
