@@ -118,7 +118,7 @@ for count in range(len(new_weights2)):
 		print(valued_cluster[count])
 
 for count in range(len(weight_array)):
-	if PFAM[count][0] == 'PF00723.16':
+	if PFAM[count][0] == 'PF00759.14':
 		print(weight_array[count])
 
 for count in range(len(weight_array2)):
