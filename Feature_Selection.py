@@ -43,8 +43,8 @@ for line in lines[1::]:
 	Cluster_Parse.append([line[0], line[1 ::]])
 ### 98 different features for selection
 index = lines[0]
-print(len(index))
-print(len(Cluster_Parse[0][1]))
+print(index)
+
 features = Cluster_Parse
 Cluster_Genome = {}
 for count in range(len(index)):
