@@ -58,7 +58,7 @@ for genome in Genomes:
 		target.append(Genomes[genome][1])
 		features.append(Genomes[genome][0])
 		print(genome)
-		print(features[0])
+		print(features[0][0:20])
 
 target2 = []
 features2 = []
