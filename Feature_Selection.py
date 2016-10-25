@@ -128,11 +128,11 @@ print(mean1)
 
 for count in range(len(weight_array)):
 	if PFAM[count][0] == 'PF00006.20':
-		# print(weight_array[count])
+		print(weight_array[count])
 
 for count in range(len(weight_array2)):
 	if Cluster_Parse[count][0] == '8010':
-		# print(weight_array2[count])
+		print(weight_array2[count])
 new_features = []
 for i in features:
 	new_features.append([])
