@@ -2,6 +2,7 @@ import sys
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import svm, cross_validation, preprocessing
+import numpy
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
 lines = table.readlines()
@@ -100,7 +101,7 @@ for num in weight_array2:
 print(len(valued_cluster))
 print(len(weight_array2))
 
-mean = new_weights.mean()
+mean = new_weights.mean
 std = new_weights.std()
 for count in range(len(new_weights)):
 	if new_weights[count] >= mean + std:
