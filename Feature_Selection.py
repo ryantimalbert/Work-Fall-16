@@ -75,6 +75,7 @@ clf = clf.fit(features, target)
 model = SelectFromModel(clf, prefit=True)
 feature_new = model.transform(features)
 print(len(feature_new))
+print(feature_new)
 weight_array = clf.feature_importances_
 valued_p_fam = []
 new_weights = []
