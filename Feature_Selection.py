@@ -80,10 +80,12 @@ for num in weight_array:
 	if num != 0:
 	    valued_p_fam.append(PFAM[count][0])
 	    new_weights.append(num)
-	count += 1	
+	count += 1
+print(Cluster_Parse[count][0])
+print(weight_array[0])
 # print(valued_p_fam)
-print(len(valued_p_fam))
-print(len(weight_array))
+# print(len(valued_p_fam))
+# print(len(weight_array))
 
 ### Print used ClusterId's
 clf2 = ExtraTreesClassifier()
@@ -97,23 +99,24 @@ for num in weight_array2:
 	    valued_cluster.append(Cluster_Parse[count][0])
 	    new_weights2.append(num)
 	count += 1	
+print(Cluster_Parse[count][0])
+print(weight_array2[0])
 # print(valued_cluster)
-print(len(valued_cluster))
-print(len(weight_array2))
+# print(len(valued_cluster))
+# print(len(weight_array2))
 
 mean1 = numpy.mean(new_weights)
 std1 = numpy.std(new_weights)
 for count in range(len(new_weights)):
 	if new_weights[count] >= mean1 + std1:
-		print(valued_p_fam[count])
+		# print(valued_p_fam[count])
 
 mean1 = numpy.mean(new_weights2)
 std1 = numpy.std(new_weights2)
 for count in range(len(new_weights2)):
-	if new_weights2[count] >= mean1 + (std1 * .5):
-		print(valued_cluster[count])
-print(valued_cluster[0])
-print(new_weights2[0])
+	if new_weights2[count] >= mean1 + std1:
+		# print(valued_cluster[count])
+
 
 # new_features = []
 # for i in features:
