@@ -88,7 +88,8 @@ for num in weight_array:
 	count += 1
 # print(PFAM[0][0])
 # print(weight_array[0])
-print(valued_p_fam)
+for pfam in valued_p_fam:
+	print(pfam)
 # print(len(valued_p_fam))
 # print(len(weight_array))
 
@@ -106,7 +107,8 @@ for num in weight_array2:
 	count += 1	
 # print(Cluster_Parse[0][0])
 # print(weight_array2[0])
-print(valued_cluster)
+for cluster in valued_cluster:
+	print(cluster)
 # print(len(valued_cluster))
 # print(len(weight_array2))
 
