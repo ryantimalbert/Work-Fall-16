@@ -78,10 +78,10 @@ for genome in Cluster_Genome:
 # feature_new = model.transform(features)
 # print(len(feature_new[0]))
 # print(feature_new)
-svc = SVC()
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
 # The "accuracy" scoring is proportional to the number of correct
 # classifications
-rfecv = RFECV(estimator=svc, step=1, cv=5,
+rfecv = RFECV(estimator=clf, step=1, cv=5,
               scoring='accuracy')
 rfecv.fit(features, target)
 print(rfecv.n_features_)
