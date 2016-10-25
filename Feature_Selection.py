@@ -30,7 +30,7 @@ for line in lines:
 	if 'Saprobe' in line:
 		Genomes[genome].append(0)
 		checked_genomes.append(genome)
-	else if 'pathogen' in line or 'Pathogen' in line:
+	elif 'pathogen' in line or 'Pathogen' in line:
 		Genomes[genome].append(1)
 		checked_genomes.append(genome)
 target = []
