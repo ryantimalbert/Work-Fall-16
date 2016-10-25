@@ -2,6 +2,7 @@ import sys
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import svm, cross_validation, preprocessing
+from sklearn.feature_selection import SelectFromModel
 import numpy
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
