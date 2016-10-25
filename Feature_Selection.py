@@ -10,7 +10,9 @@ for line in lines:
 	PFAM_Parse.append([line[0], line[2 ::]])
 ### 98 different features for selection
 index = PFAM_Parse[0][1]
+print(index)
 features = PFAM_Parse[1 ::]
+print(features)
 Genomes = {}
 for count in range(len(index)):
 	genome = index[count]
@@ -22,16 +24,14 @@ style = open(life_style, 'r')
 lines = style.readlines()
 count = 0
 checked_genomes = []
-for line in lines[1::]:
+for line in lines
 	line = line.split()
 	genome = line[0]
-	if genome == '##OUTGROUP':
-		continue;
-	if 'saprophyte' in line or 'saprophytic' in line:
-		Genomes[genome].append(1)
-		checked_genomes.append(genome)
-	else:
+	if 'Saprobe' in line:
 		Genomes[genome].append(0)
+		checked_genomes.append(genome)
+	else if 'pathogen' in line or 'Pathogen' in line:
+		Genomes[genome].append(1)
 		checked_genomes.append(genome)
 target = []
 features = []

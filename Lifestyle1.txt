@@ -1,0 +1,90 @@
+Cocvi1    Plant Pathogen
+Cocca1    Plant Pathogen
+Cocmi1    Plant Pathogen
+Cocsa1    Plant Pathogen
+CocheC5_3    Plant Pathogen
+Coclu2    Plant Pathogen
+Settu1    Plant Pathogen
+Pyrtt1    Plant Pathogen
+Pyrtr1    Plant Pathogen
+Altbr1    Plant Pathogen
+Altal1    Plant Pathogen
+Decga1    Saprobe
+Clael1    Plant Pathogen
+Lepmu1    Plant Pathogen
+Photr1    
+Pyrsp1    
+Cucbe1    Plant Pathogen
+Stano2    Plant Pathogen
+Stasp1    Plant Pathogen
+Ophdi1    
+Setho1    Plant Pathogen
+Macan1    
+Didex1    Plant Pathogen
+Lizem1    
+Dotsy1    
+Parsp1    
+Karrh1    Saprobe
+Bimnz1    Saprobe
+Bysci1    Saprobe
+Maseb1    
+Lenfl1    Saprobe
+Trepe1    aquatic
+Corca1    Plant Pathogen
+Plesi1    
+Melpu1    Saprobe
+Spofi1    Saprobe
+Wesor1    Saprobe
+Lopma1    Saprobe
+Aaoar1    Plant Pathogen
+Polfu1    
+Veren1    
+Amnli1    Freshwater
+Linin1    aquatic
+Zoprh1    Maybe a weak pathogen
+Delco1    Saprobe
+Rhyru1_1    
+Hyspu1_1    Saprobe
+Glost2    Saprobe
+Cenge3    ectomycorrhizal 
+Leppa1    Saprobe
+Mytre1    
+Lopmy1    
+Psehy1    
+Botdo1_1    Plant Pathogen
+Macph1    Plant Pathogen
+Neopa1    Plant Pathogen
+Phycit1    Plant Pathogen
+Aplpr1    Plant Pathogen
+Sacpr1    Plant Pathogen
+Patat1    
+Venin1    Plant Pathogen
+Venpi1    Plant Pathogen
+Totfu1    
+Tribi1    Saprobe
+Micmi1    
+Erebi1    Saprobe
+Aulhe2    Saprobe
+Rhili1    
+Seppo1    Plant Pathogen
+Sepmu1    Plant Pathogen
+Cerzm1    Plant Pathogen
+Mycfi2    
+Dotse1    Plant Pathogen
+Clafu1    Plant Pathogen
+Zasce1    Saprobe
+Mycgr3    Plant Pathogen
+Zymps1    Plant Pathogen
+Zymar1    Plant Pathogen
+Disac1    
+Pieho1_1    
+Aciri1_meta    Extremophile - acid mine drainage
+Ternu1    Plant Pathogen
+Bauco1    Saprobe
+Polci1    Saprobe
+Aurpu_var_mel1    Saprobe
+Aurpu_var_nam1    Saprobe
+Aurpu_var_sub1    Saprobe
+Aurpu_var_pul1    Saprobe
+Myrdu1    
+Tryvi1    Lichen forming
