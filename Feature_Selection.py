@@ -24,7 +24,7 @@ style = open(life_style, 'r')
 lines = style.readlines()
 count = 0
 checked_genomes = []
-for line in lines
+for line in lines:
 	line = line.split()
 	genome = line[0]
 	if 'Saprobe' in line:
