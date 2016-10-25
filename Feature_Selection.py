@@ -101,7 +101,7 @@ for num in weight_array2:
 print(len(valued_cluster))
 print(len(weight_array2))
 
-mean = new_weights.mean
+mean = new_weights.mean()
 std = new_weights.std()
 for count in range(len(new_weights)):
 	if new_weights[count] >= mean + std:
