@@ -4,7 +4,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn import svm, cross_validation, preprocessing
 from sklearn.feature_selection import SelectFromModel
 from sklearn.svm import SVC
-from sklearn.model_selection import StratifiedKFold
 from sklearn.feature_selection import RFECV
 import numpy
 p_fam_table = sys.argv[1]
@@ -82,7 +81,7 @@ for genome in Cluster_Genome:
 svc = SVC()
 # The "accuracy" scoring is proportional to the number of correct
 # classifications
-rfecv = RFECV(estimator=svc, step=1, cv=StratifiedKFold(5),
+rfecv = RFECV(estimator=svc, step=1, cv=5,
               scoring='accuracy')
 rfecv.fit(X, y)
 print(rfecv.n_features_)
