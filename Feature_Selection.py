@@ -43,7 +43,6 @@ for line in lines[1::]:
 	Cluster_Parse.append([line[0], line[1 ::]])
 
 index = lines[0].split()
-print(len(index))
 features = Cluster_Parse
 Cluster_Genome = {}
 for count in range(len(index)):
@@ -75,21 +74,28 @@ PFAM = PFAM_Parse[1 ::]
 for num in weight_array:
 	if num != 0:
 	    valued_p_fam.append(PFAM_Parse[count][0])	
+	    print(PFAM_Parse[count][0])
+	    print(features[0][count])
 	count += 1	
 print(valued_p_fam)
 print(len(valued_p_fam))
+print(weight_array)
 
 clf2 = ExtraTreesClassifier()
 clf2 = clf.fit(features2, target2)
 weight_array2 = clf2.feature_importances_
 valued_cluster = []
 count = 0
-print(Cluster_Parse[0][0])
+
+
 for num in weight_array2:
 	if num != 0:
-	    valued_cluster.append(Cluster_Parse[count][0])	
+	    valued_cluster.append(Cluster_Parse[count][0])
+	    print(Cluster_Parse[count][0])
+	    print(features2[0][count])
 	count += 1	
 print(valued_cluster)
 print(len(valued_cluster))
+print(len(weight_array2))
 
 
