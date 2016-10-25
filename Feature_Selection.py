@@ -117,7 +117,13 @@ for count in range(len(new_weights2)):
 	if new_weights2[count] >= mean1 + (2 * std1):
 		print(valued_cluster[count])
 
+for count in range(len(weight_array)):
+	if PFAM[count][0] == 'PF00723.16':
+		print(weight_array[count])
 
+for count in range(len(weight_array2)):
+	if Cluster_Parse[count][0] == 'PF00723.16':
+		print(weight_array2[count])
 # new_features = []
 # for i in features:
 # 	new_features.append([])
