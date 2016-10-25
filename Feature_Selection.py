@@ -81,7 +81,7 @@ for num in weight_array:
 	    valued_p_fam.append(PFAM[count][0])
 	    new_weights.append(num)
 	count += 1
-print(Cluster_Parse[count][0])
+print(PFAM[0][0])
 print(weight_array[0])
 # print(valued_p_fam)
 # print(len(valued_p_fam))
@@ -99,7 +99,7 @@ for num in weight_array2:
 	    valued_cluster.append(Cluster_Parse[count][0])
 	    new_weights2.append(num)
 	count += 1	
-print(Cluster_Parse[count][0])
+print(Cluster_Parse[0][0])
 print(weight_array2[0])
 # print(valued_cluster)
 # print(len(valued_cluster))
