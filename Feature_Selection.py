@@ -57,9 +57,6 @@ for genome in Genomes:
 	if genome in checked_genomes:
 		target.append(Genomes[genome][1])
 		features.append(Genomes[genome][0])
-		print(genome)
-		print(features[0][0:20])
-		break;
 
 target2 = []
 features2 = []
@@ -74,9 +71,10 @@ weight_array = clf.feature_importances_
 valued_p_fam = []
 count = 0
 PFAM = PFAM_Parse[1 ::]
+print(PFAM)
 for num in weight_array:
 	if num != 0:
-	    valued_p_fam.append(PFAM_Parse[count][0])	
+	    valued_p_fam.append(PFAM[count][0])	
 	count += 1	
 # print(valued_p_fam)
 # print(len(valued_p_fam))
@@ -88,7 +86,7 @@ weight_array2 = clf2.feature_importances_
 valued_cluster = []
 count = 0
 
-
+print(Cluster_Parse)
 for num in weight_array2:
 	if num != 0:
 	    valued_cluster.append(Cluster_Parse[count][0])
