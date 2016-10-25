@@ -112,6 +112,8 @@ std1 = numpy.std(new_weights2)
 for count in range(len(new_weights2)):
 	if new_weights2[count] >= mean1 + (std1 * .5):
 		print(valued_cluster[count])
+print(valued_cluster[0])
+print(new_weights2[0])
 
 # new_features = []
 # for i in features:
