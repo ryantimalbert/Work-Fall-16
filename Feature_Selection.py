@@ -80,7 +80,7 @@ for num in weight_array:
 	count += 1	
 # print(valued_p_fam)
 print(len(valued_p_fam))
-print(weight_array)
+print(len(weight_array))
 
 ### Print used ClusterId's
 clf2 = ExtraTreesClassifier()
@@ -132,6 +132,15 @@ score = cross_validation.cross_val_score(clf, features2, target2, cv = 5)
 print(score.mean())
 print(score.std())
 
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 5)
+print(score.mean())
+print(score.std())
+
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, new_features2, target2, cv = 5)
+print(score.mean())
+print(score.std())
 
 
 
