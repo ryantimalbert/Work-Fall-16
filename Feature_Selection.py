@@ -137,6 +137,7 @@ for num in weight_array:
 			count2 += 1
 	count += 1
 count = 0
+print(len(weight_array2))
 for num in weight_array2:
 	if num != 0:
 		count2 = 0
