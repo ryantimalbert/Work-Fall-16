@@ -101,16 +101,16 @@ for num in weight_array2:
 print(len(valued_cluster))
 print(len(weight_array2))
 
-mean = new_weights.mean()
-std = new_weights.std()
+mean1 = numpy.mean(new_weights)
+std1 = numpy.std(new_weights)
 for count in range(len(new_weights)):
-	if new_weights[count] >= mean + std:
+	if new_weights[count] >= mean1 + std1:
 		print(valued_p_fam[count])
 
-mean = new_weights2.mean()
-std = new_weights2.std()
+mean1 = numpy.mean(new_weights2)
+std1 = numpy.std(new_weights2)
 for count in range(len(new_weights2)):
-	if new_weights2[count] >= mean + std:
+	if new_weights2[count] >= mean1 + std1:
 		print(valued_cluster[count])
 
 # new_features = []
