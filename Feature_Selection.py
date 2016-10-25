@@ -74,8 +74,8 @@ clf = ExtraTreesClassifier()
 clf = clf.fit(features, target)
 model = SelectFromModel(clf, prefit=True)
 feature_new = model.transform(features)
-print(len(feature_new[0]))
-print(feature_new)
+# print(len(feature_new[0]))
+# print(feature_new)
 weight_array = clf.feature_importances_
 valued_p_fam = []
 new_weights = []
@@ -88,7 +88,7 @@ for num in weight_array:
 	count += 1
 # print(PFAM[0][0])
 # print(weight_array[0])
-# print(valued_p_fam)
+print(valued_p_fam)
 # print(len(valued_p_fam))
 # print(len(weight_array))
 
@@ -104,9 +104,9 @@ for num in weight_array2:
 	    valued_cluster.append(Cluster_Parse[count][0])
 	    new_weights2.append(num)
 	count += 1	
-print(Cluster_Parse[0][0])
-print(weight_array2[0])
-# print(valued_cluster)
+# print(Cluster_Parse[0][0])
+# print(weight_array2[0])
+print(valued_cluster)
 # print(len(valued_cluster))
 # print(len(weight_array2))
 
@@ -115,23 +115,23 @@ mean1 = numpy.mean(new_weights)
 std1 = numpy.std(new_weights)
 for count in range(len(new_weights)):
 	if new_weights[count] >= mean1 + (2 * std1):
-		print(valued_p_fam[count])
-print(mean1)
+# 		print(valued_p_fam[count])
+# print(mean1)
 
 mean1 = numpy.mean(new_weights2)
 std1 = numpy.std(new_weights2)
 for count in range(len(new_weights2)):
 	if new_weights2[count] >= mean1 + (2 * std1):
-		print(valued_cluster[count])
-print(mean1)
+# 		print(valued_cluster[count])
+# print(mean1)
 
 for count in range(len(weight_array)):
 	if PFAM[count][0] == 'PF00006.20':
-		print(weight_array[count])
+		# print(weight_array[count])
 
 for count in range(len(weight_array2)):
 	if Cluster_Parse[count][0] == '8010':
-		print(weight_array2[count])
+		# print(weight_array2[count])
 new_features = []
 for i in features:
 	new_features.append([])
@@ -154,9 +154,9 @@ for num in weight_array2:
 			new_features2[count2].append(features2[count2][count])
 			count2 += 1
 	count += 1
-print(len(new_features[0]))
-print(len(new_features2[0]))
-print(len(target))
+# print(len(new_features[0]))
+# print(len(new_features2[0]))
+# print(len(target))
 
 clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
 score = cross_validation.cross_val_score(clf, features, target, cv = 15)
