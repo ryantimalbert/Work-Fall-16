@@ -5,6 +5,8 @@ from sklearn import svm, cross_validation, preprocessing
 from sklearn.feature_selection import SelectFromModel
 from sklearn.svm import SVC
 from sklearn.feature_selection import RFECV
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
 import numpy
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
@@ -197,3 +199,8 @@ score = cross_validation.cross_val_score(clf, combined, target2, cv = 15)
 print(score.mean())
 print(score.std())
 
+X_new = SelectKBest(chi2, k= 100).fit_transform(features, target)
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, X_new, target, cv = 15)
+print(score.mean())
+print(score.std())
