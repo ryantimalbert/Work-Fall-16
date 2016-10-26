@@ -90,7 +90,7 @@ for num in weight_array:
 
 # for p_fam in valued_p_fam:
 # 	print(p_fam)
-print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+# print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
 ## Print used ClusterId's
 clf2 = ExtraTreesClassifier()
 clf2 = clf.fit(features2, target2)
@@ -100,6 +100,9 @@ new_weights2 = []
 count = 0
 for num in weight_array2:
 	if Cluster_Parse[count][0] == '7663':
+		print(Cluster_Genome['Settu1'][0][count])
+		print(Cluster_Genome['Bimnz1'][0][count])
+		print(Cluster_Genome['Aaoar1'][0][count])
 		print(num)
 	if num != 0:
 	    valued_cluster.append(Cluster_Parse[count][0])
@@ -108,7 +111,7 @@ for num in weight_array2:
 
 # for cluster in valued_cluster:
 # 	print(cluster)
-print('===================================================================')
+# print('===================================================================')
 
 mean1 = numpy.mean(new_weights)
 std1 = numpy.std(new_weights)
