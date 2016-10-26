@@ -101,8 +101,7 @@ count = 0
 for num in weight_array2:
 	if Cluster_Parse[count][0] == '7663':
 		print(Cluster_Genome['Settu1'][0][count])
-		print(Cluster_Genome['Bimnz1'][0][count])
-		print(Cluster_Genome['Aaoar1'][0][count])
+		print(Cluster_Genome['Zymps1'][0][count])
 		print(num)
 	if num != 0:
 	    valued_cluster.append(Cluster_Parse[count][0])
