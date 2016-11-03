@@ -101,8 +101,9 @@ for count in range(len(best_scores)):
 	if best_scores[count] >= mean1 + (2 * std1):
 		print(best_scores[count])
 		print(best_features[count][0])
-for best in best_features:
-	print(best[0])
+	elif best_features[count][0] == '7663':
+		print(best_features[count])
+		print(best_scores[count])
 
 
 
