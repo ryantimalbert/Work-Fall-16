@@ -13,12 +13,21 @@ table = open(p_fam_table, 'r')
 lines = table.readlines()
 table.close()
 PFAM_Parse = []
-for line in lines:
+# for line in lines:
+# 	line = line.split()
+# 	PFAM_Parse.append([line[0], line[2 ::]])
+# ### 98 different features for selection
+# index = PFAM_Parse[0][1]
+# features = PFAM_Parse[1 ::]
+
+index = lines[0].split()
+for line in lines[1 ::]:
 	line = line.split()
-	PFAM_Parse.append([line[0], line[2 ::]])
+	PFAM_Parse.append([line[0], line[1 ::]])
 ### 98 different features for selection
-index = PFAM_Parse[0][1]
-features = PFAM_Parse[1 ::]
+features = PFAM_Parse
+
+
 Genomes = []
 for count in range(len(index)):
 	genome = index[count]
@@ -76,8 +85,6 @@ PFAM = PFAM_Parse[1 ::]
 X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
-print(X_new.scores_)
-print(correct)
 count = 0
 PFAM = PFAM_Parse[1 ::]
 best_scores = []
