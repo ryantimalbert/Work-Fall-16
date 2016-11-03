@@ -91,13 +91,17 @@ std1 = numpy.std(new_weights)
 for count in range(len(new_weights)):
 	if new_weights[count] >= mean1 + (2 * std1):
 		print(valued_p_fam[count])
-for val in valued_p_fam:
-	print(val)
+# for val in valued_p_fam:
+# 	print(val)
 for count in range(len(weight_array)):
 	if PFAM[count][0] == 'PF13792.1':
 		print(weight_array[count])
 		print(count)
 	count += 1
+print(PFAM[4556][0])
+for i in range(len(features)):
+	features[i][4556]
+	target[i]
 # for num in weight_array:
 # 	if num != 0:
 # 		count2 = 0
