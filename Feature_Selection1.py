@@ -25,7 +25,7 @@ for count in range(len(index)):
 	Genomes[genome] = [[]]
 	for line in features:
 		Genomes[genome][0].append(line[1][count])
-print(Genomes['Aaoar1'][0])
+# print(Genomes['Aaoar1'][0])
 print(Genomes['Zymps1'][0])
 # life_style = sys.argv[2]
 # style = open(life_style, 'r')
