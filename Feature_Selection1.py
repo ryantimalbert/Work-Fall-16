@@ -70,7 +70,7 @@ target = []
 features = []
 for genome in Genomes:
 	if genome[0] in checked_genomes:
-		print(genome)
+		print(genome[0])
 		target.append(genome[2])
 		features.append(genome[1])
 
