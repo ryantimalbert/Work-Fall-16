@@ -75,8 +75,9 @@ for genome in Genomes:
 print(count1)
 print(len(features))
 
-for i in features:
-	print(i[0])
+print(features[0])
+
+
 X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
