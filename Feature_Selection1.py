@@ -25,23 +25,21 @@ for count in range(len(index)):
 	Genomes[genome] = [[]]
 	for line in features:
 		Genomes[genome][0].append(line[1][count])
-# print(Genomes['Aaoar1'][0])
-print(Genomes['Zymps1'][0])
-# life_style = sys.argv[2]
-# style = open(life_style, 'r')
-# lines = style.readlines()
-# style.close()
-# count = 0
-# checked_genomes = []
-# for line in lines:
-# 	line = line.split()
-# 	genome = line[0]
-# 	if 'Saprobe' in line:
-# 		Genomes[genome].append(0)
-# 		checked_genomes.append(genome)
-# 	elif 'pathogen' in line or 'Pathogen' in line:
-# 		Genomes[genome].append(1)
-# 		checked_genomes.append(genome)
+life_style = sys.argv[2]
+style = open(life_style, 'r')
+lines = style.readlines()
+style.close()
+count = 0
+checked_genomes = []
+for line in lines:
+	line = line.split()
+	genome = line[0]
+	if 'Saprobe' in line:
+		Genomes[genome].append(0)
+		checked_genomes.append(genome)
+	elif 'pathogen' in line or 'Pathogen' in line:
+		Genomes[genome].append(1)
+		checked_genomes.append(genome)
 
 # cluster_table = sys.argv[3]
 # table = open(cluster_table, 'r')
@@ -61,12 +59,14 @@ print(Genomes['Zymps1'][0])
 # 	for line in features:
 # 		Cluster_Genome[genome][0].append(line[1][count])
 
-# target = []
-# features = []
-# for genome in Genomes:
-# 	if genome in checked_genomes:
-# 		target.append(Genomes[genome][1])
-# 		features.append(Genomes[genome][0])
+target = []
+features = []
+for genome in Genomes:
+	if genome in checked_genomes:
+		target.append(Genomes[genome][1])
+		features.append(Genomes[genome][0])
+for i in features:
+	print(features[0])
 
 # target2 = []
 # features2 = []
