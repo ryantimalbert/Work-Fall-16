@@ -19,12 +19,13 @@ for line in lines:
 ### 98 different features for selection
 index = PFAM_Parse[0][1]
 features = PFAM_Parse[1 ::]
-Genomes = {}
+Genomes = []
 for count in range(len(index)):
 	genome = index[count]
-	Genomes[genome] = [[]]
+	fet = []
 	for line in features:
-		Genomes[genome][0].append(line[1][count])
+		fet.append(line[1][count])
+	Genomes.append([genome, fet])
 life_style = sys.argv[2]
 style = open(life_style, 'r')
 lines = style.readlines()
@@ -35,11 +36,17 @@ for line in lines:
 	line = line.split()
 	genome = line[0]
 	if 'Saprobe' in line:
-		Genomes[genome].append(0)
+		for i in Genomes:
+			if i[0] == genome:
+				i.append(0)
 		checked_genomes.append(genome)
 	elif 'pathogen' in line or 'Pathogen' in line:
-		Genomes[genome].append(1)
+		for i in Genomes:
+			if i[0] == genome:
+				i.append(1)
 		checked_genomes.append(genome)
+	else:
+		pass
 
 # cluster_table = sys.argv[3]
 # table = open(cluster_table, 'r')
@@ -62,18 +69,10 @@ for line in lines:
 target = []
 features = []
 for genome in Genomes:
-	if genome in checked_genomes:
-		target.append([Genomes[genome][1], genome])
-		features.append(Genomes[genome][0])
-count = 0
-for i in target:
-	if i[1] == 'Zymps1':
-		print(count)
-		break;
-	count += 1
-for i in features:
-	print(i[count])
-print(features[count][1])
+	if genome[0] in checked_genomes:
+		print(genome)
+		target.append(genome[2])
+		features.append(genome[1])
 
 # target2 = []
 # features2 = []
