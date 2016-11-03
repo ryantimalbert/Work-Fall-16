@@ -93,6 +93,10 @@ for count in range(len(new_weights)):
 		print(valued_p_fam[count])
 for val in valued_p_fam:
 	print(val)
+for count in range(len(weight_array)):
+	if PFAM[count][0] == 'PF13792.1':
+		print(weight_array[count])
+	count += 1
 # for num in weight_array:
 # 	if num != 0:
 # 		count2 = 0
