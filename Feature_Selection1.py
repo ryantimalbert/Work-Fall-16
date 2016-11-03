@@ -79,11 +79,20 @@ correct = X_new.get_support()
 print(X_new.scores_)
 print(correct)
 count = 0
+PFAM = PFAM_Parse[1 ::]
+best_scores = []
+best_features = []
 for bol in correct:
 	if bol:
-		count += 1
-print(count)
-PFAM = PFAM_Parse[1 ::]
+		best_features.append(PFAM[count])
+		best_scores.append(X_new.scores_[count])
+	count += 1
+mean1 = numpy.mean(best_scores)
+std1 = numpy.std(best_scores)
+for count in range(len(best_scores)):
+	if best_scores[count] >= mean1 + (2 * std1):
+		print(best_features[count])
+
 
 
 # for val in valued_p_fam:
