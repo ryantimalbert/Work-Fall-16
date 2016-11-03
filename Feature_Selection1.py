@@ -96,6 +96,7 @@ for val in valued_p_fam:
 for count in range(len(weight_array)):
 	if PFAM[count][0] == 'PF13792.1':
 		print(weight_array[count])
+		print(count)
 	count += 1
 # for num in weight_array:
 # 	if num != 0:
