@@ -74,11 +74,11 @@ for genome in Genomes:
 		features.append(genome[1])
 PFAM = PFAM_Parse[1 ::]
 X_new = SelectKBest(k=100)
-new = X_new.fit_transform(features, target)
+X_new = X_new.fit(features, target)
 print(len(new[0]))
+correct = X_new.get_support()
 print(X_new.scores_)
-for score in X_new.scores_:
-	print(score)
+print(correct)
 PFAM = PFAM_Parse[1 ::]
 
 
