@@ -63,10 +63,16 @@ target = []
 features = []
 for genome in Genomes:
 	if genome in checked_genomes:
-		target.append(Genomes[genome][1])
+		target.append([Genomes[genome][1], genome])
 		features.append(Genomes[genome][0])
+count = 0
+for i in target:
+	if i[1] == 'Zymps1':
+		print(count)
+		break;
+	count += 1
 for i in features:
-	print(i[0])
+	print(i[count])
 
 # target2 = []
 # features2 = []
