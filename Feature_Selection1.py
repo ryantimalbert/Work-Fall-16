@@ -73,6 +73,7 @@ for i in target:
 	count += 1
 for i in features:
 	print(i[count])
+print(features[count][1])
 
 # target2 = []
 # features2 = []
