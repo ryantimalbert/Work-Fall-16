@@ -108,8 +108,11 @@ mean1 = numpy.mean(best_scores)
 std1 = numpy.std(best_scores)
 for count in range(len(best_scores)):
 	if best_scores[count] >= mean1 + (2 * std1):
+		print(best_scores[count])
+		print(best_features[count][0])
+	elif best_features[count][0] == '7663':
+		print(best_scores[count])
 		print(best_features[count])
-		print(len(best_features[count][1]))
 
 
 
