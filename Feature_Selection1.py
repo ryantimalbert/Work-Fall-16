@@ -76,7 +76,7 @@ print(count1)
 print(len(features))
 
 for i in features:
-	print(i[4053])
+	print(i[4052])
 
 
 X_new = SelectKBest(k=100)
