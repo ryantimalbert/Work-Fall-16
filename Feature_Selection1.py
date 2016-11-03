@@ -85,6 +85,7 @@ count = 0
 ### for Cluster
 PFAM = PFAM_Parse
 
+print(PFAM)
 
 best_scores = []
 best_features = []
@@ -96,13 +97,13 @@ for bol in correct:
 count = 0
 mean1 = numpy.mean(best_scores)
 std1 = numpy.std(best_scores)
-for count in range(len(best_scores)):
-	if best_scores[count] >= mean1 + (2 * std1):
-		print(best_scores[count])
-		print(best_features[count][0])
-	elif best_features[count][0] == '7663':
-		print(best_features[count])
-		print(best_scores[count])
+# for count in range(len(best_scores)):
+# 	if best_scores[count] >= mean1 + (2 * std1):
+# 		print(best_scores[count])
+# 		print(best_features[count][0])
+# 	elif best_features[count][0] == '7663':
+# 		print(best_features[count])
+# 		print(best_scores[count])
 
 
 
