@@ -77,7 +77,7 @@ X_new = SelectKBest(k=100)
 new = X_new.fit_transform(features, target)
 print(len(new[0]))
 print(X_new.scores_)
-for score in X_new.scores:
+for score in X_new.scores_:
 	print(score)
 PFAM = PFAM_Parse[1 ::]
 
