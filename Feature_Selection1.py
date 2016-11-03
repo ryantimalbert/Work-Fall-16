@@ -84,6 +84,8 @@ for genome in Genomes:
 	if genome[0] in checked_genomes:
 		target.append(genome[2])
 		features.append(genome[1])
+	else:
+		print(genome)
 PFAM = PFAM_Parse[1 ::]
 X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
