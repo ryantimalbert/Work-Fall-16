@@ -73,8 +73,10 @@ for genome in Genomes:
 		target.append(genome[2])
 		features.append(genome[1])
 PFAM = PFAM_Parse[1 ::]
-X_new = SelectKBest(chi2, k=100).fit_transform(features[0 : 1], target[ 0 : 1])
+# X_new = SelectKBest(chi2, k=100).fit_transform(features[0 : 1], target[ 0 : 1])
 PFAM = PFAM_Parse[1 ::]
+for i in features:
+	print(i[0])
 
 # for val in valued_p_fam:
 # 	print(val)
