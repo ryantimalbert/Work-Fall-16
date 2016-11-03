@@ -74,6 +74,9 @@ for genome in Genomes:
 		count1 += 1
 print(count1)
 print(len(features))
+
+for i in features:
+	print(i[0])
 X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
@@ -85,7 +88,6 @@ count = 0
 ### for Cluster
 PFAM = PFAM_Parse
 
-print(PFAM[0])
 
 best_scores = []
 best_features = []
