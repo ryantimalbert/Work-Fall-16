@@ -72,10 +72,8 @@ for genome in Genomes:
 	if genome[0] in checked_genomes:
 		target.append(genome[2])
 		features.append([genome[0], genome[1]])
-for i in features:
-	if i[0] == 'Aaoar1':
-		print(i[1])
-		print(len(i[1]))
+print(PFAM[0][0])
+print(PFAM[4893][0])
 
 
 # target2 = []
