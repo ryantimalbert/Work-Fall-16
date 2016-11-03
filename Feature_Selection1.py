@@ -66,7 +66,7 @@ for genome in Genomes:
 		target.append(Genomes[genome][1])
 		features.append(Genomes[genome][0])
 for i in features:
-	print(features[0])
+	print(i[0])
 
 # target2 = []
 # features2 = []
