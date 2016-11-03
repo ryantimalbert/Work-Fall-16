@@ -71,7 +71,7 @@ features = []
 for genome in Genomes:
 	if genome[0] in checked_genomes:
 		target.append(genome[2])
-		features.append(genome, genome[1])
+		features.append([genome, genome[1]])
 for i in features:
 	if i[0] == 'Zymps1':
 		print(i[1])
