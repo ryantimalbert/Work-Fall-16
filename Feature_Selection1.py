@@ -32,6 +32,7 @@ features = PFAM_Parse
 
 
 Genomes = []
+print(len(PFAM_Parse[0][1]))
 for count in range(len(index)):
 	genome = index[count]
 	fet = []
@@ -85,7 +86,7 @@ for genome in Genomes:
 		target.append(genome[2])
 		features.append(genome[1])
 	else:
-		print(genome)
+		print(genome[0])
 PFAM = PFAM_Parse[1 ::]
 X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
@@ -104,6 +105,7 @@ std1 = numpy.std(best_scores)
 for count in range(len(best_scores)):
 	if best_scores[count] >= mean1 + (2 * std1):
 		print(best_features[count])
+		print(len(best_features[count]))
 
 
 
