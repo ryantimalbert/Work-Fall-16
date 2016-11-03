@@ -61,23 +61,7 @@ for line in lines:
 	else:
 		pass
 
-# cluster_table = sys.argv[3]
-# table = open(cluster_table, 'r')
-# lines = table.readlines()
-# table.close()
-# Cluster_Parse = []
-# for line in lines[1::]:
-# 	line = line.split()
-# 	Cluster_Parse.append([line[0], line[1 ::]])
 
-# index = lines[0].split()
-# features = Cluster_Parse
-# Cluster_Genome = {}
-# for count in range(len(index)):
-# 	genome = index[count]
-# 	Cluster_Genome[genome] = [[]]
-# 	for line in features:
-# 		Cluster_Genome[genome][0].append(line[1][count])
 
 target = []
 features = []
@@ -118,7 +102,23 @@ for count in range(len(best_scores)):
 		print(best_scores[count])
 		print(best_features[count][0])
 for best in best_features:
-	print(best_features)
+	print(best_features[0])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
