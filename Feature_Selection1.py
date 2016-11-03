@@ -71,11 +71,32 @@ features = []
 for genome in Genomes:
 	if genome[0] in checked_genomes:
 		target.append(genome[2])
-		features.append([genome[0], genome[1]])
+		features.append(genome[1])
 PFAM = PFAM_Parse[1 ::]
-print(PFAM[0][0])
-print(PFAM[4893][0])
+clf = ExtraTreesClassifier()
+clf = clf.fit(features, target)
 
+weight_array = clf.feature_importances_
+valued_p_fam = []
+new_weights = []
+count = 0
+PFAM = PFAM_Parse[1 ::]
+for num in weight_array:
+	if num != 0:
+	    valued_p_fam.append(PFAM[count][0])
+	    new_weights.append(num)
+	count += 1
+mean1 = numpy.mean(new_weights)
+std1 = numpy.std(new_weights)
+for count in range(len(new_weights)):
+	if new_weights[count] >= mean1 + (2 * std1):
+		print(valued_p_fam[count])
+# for num in weight_array:
+# 	if num != 0:
+# 		count2 = 0
+# 		for i in features:
+# 			new_features[count2].append(features[count2][count])
+# 			count2 += 1
 
 # target2 = []
 # features2 = []
