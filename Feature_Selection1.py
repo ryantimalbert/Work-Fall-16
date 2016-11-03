@@ -13,6 +13,8 @@ table = open(p_fam_table, 'r')
 lines = table.readlines()
 table.close()
 PFAM_Parse = []
+
+######## FOR PFAM
 # for line in lines:
 # 	line = line.split()
 # 	PFAM_Parse.append([line[0], line[2 ::]])
@@ -20,11 +22,12 @@ PFAM_Parse = []
 # index = PFAM_Parse[0][1]
 # features = PFAM_Parse[1 ::]
 
+
+####### FOR CLUSTER
 index = lines[0].split()
 for line in lines[1 ::]:
 	line = line.split()
 	PFAM_Parse.append([line[0], line[1 ::]])
-### 98 different features for selection
 features = PFAM_Parse
 
 
