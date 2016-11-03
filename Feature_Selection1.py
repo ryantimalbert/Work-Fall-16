@@ -85,7 +85,7 @@ count = 0
 ### for Cluster
 PFAM = PFAM_Parse
 
-print(PFAM)
+print(PFAM[0])
 
 best_scores = []
 best_features = []
