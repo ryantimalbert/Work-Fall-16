@@ -78,6 +78,11 @@ X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 print(X_new.scores_)
 print(correct)
+count = 0
+for bol in correct:
+	if bol:
+		count += 1
+print(count)
 PFAM = PFAM_Parse[1 ::]
 
 
