@@ -100,7 +100,7 @@ for count in range(len(weight_array)):
 	count += 1
 print(PFAM[4556][0])
 for i in range(len(features)):
-	print(features[i][4556])
+	# print(features[i][4556])
 	print(target[i])
 # for num in weight_array:
 # 	if num != 0:
