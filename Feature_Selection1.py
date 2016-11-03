@@ -81,12 +81,14 @@ for line in lines:
 
 target = []
 features = []
+count1 = 0
 for genome in Genomes:
 	if genome[0] in checked_genomes:
 		target.append(genome[2])
 		features.append(genome[1])
 	else:
-		print(genome[0])
+		count1 += 1
+print(count1)
 PFAM = PFAM_Parse[1 ::]
 X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
@@ -100,12 +102,13 @@ for bol in correct:
 		best_features.append(PFAM[count])
 		best_scores.append(X_new.scores_[count])
 	count += 1
+count = 0
 mean1 = numpy.mean(best_scores)
 std1 = numpy.std(best_scores)
 for count in range(len(best_scores)):
 	if best_scores[count] >= mean1 + (2 * std1):
 		print(best_features[count])
-		print(len(best_features[count]))
+		print(len(best_features[count][1]))
 
 
 
