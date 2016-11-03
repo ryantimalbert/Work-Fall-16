@@ -73,7 +73,7 @@ for genome in Genomes:
 		target.append(genome[2])
 		features.append([genome[0], genome[1]])
 for i in features:
-	if i[0] == 'Zymps1':
+	if i[0] == 'Aaoar1':
 		print(i[1])
 		print(len(i[1]))
 
