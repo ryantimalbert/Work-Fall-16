@@ -102,7 +102,7 @@ for count in range(len(best_scores)):
 		print(best_scores[count])
 		print(best_features[count][0])
 for best in best_features:
-	print(best_features[0])
+	print(best[0])
 
 
 
