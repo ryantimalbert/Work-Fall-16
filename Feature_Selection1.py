@@ -74,6 +74,7 @@ for genome in Genomes:
 		features.append(genome[1])
 PFAM = PFAM_Parse[1 ::]
 X_new = SelectKBest(chi2, k=100)
+print(X_new.scores_)
 PFAM = PFAM_Parse[1 ::]
 
 
