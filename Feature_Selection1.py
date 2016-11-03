@@ -75,6 +75,7 @@ for genome in Genomes:
 for i in features:
 	if i[0] == 'Zymps1':
 		print(i[1])
+		print(len(i))
 
 
 # target2 = []
