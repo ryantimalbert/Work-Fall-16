@@ -95,7 +95,14 @@ X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
-PFAM = PFAM_Parse[1 ::]
+
+### for PFAM
+# PFAM = PFAM_Parse[1 ::]
+
+### for Cluster
+PFAM = PFAM_Parse
+
+
 best_scores = []
 best_features = []
 for bol in correct:
@@ -110,9 +117,9 @@ for count in range(len(best_scores)):
 	if best_scores[count] >= mean1 + (2 * std1):
 		print(best_scores[count])
 		print(best_features[count][0])
-	elif best_features[count][0] == '7663':
-		print(best_scores[count])
-		print(best_features[count])
+for best in best_features:
+	print(best_features)
+
 
 
 
