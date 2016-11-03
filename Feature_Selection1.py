@@ -75,7 +75,6 @@ for genome in Genomes:
 PFAM = PFAM_Parse[1 ::]
 X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
-print(len(new[0]))
 correct = X_new.get_support()
 print(X_new.scores_)
 print(correct)
