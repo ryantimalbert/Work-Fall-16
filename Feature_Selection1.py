@@ -75,7 +75,8 @@ for genome in Genomes:
 print(count1)
 print(len(features))
 
-print(features[0])
+for i in features:
+	print(i[4053])
 
 
 X_new = SelectKBest(k=100)
@@ -94,19 +95,22 @@ best_scores = []
 best_features = []
 for bol in correct:
 	if bol:
+		if PFAM[count][0] == '7663':
+			print(count)
+			print(X_new.scores_[count])
 		best_features.append(PFAM[count])
 		best_scores.append(X_new.scores_[count])
 	count += 1
 count = 0
 mean1 = numpy.mean(best_scores)
 std1 = numpy.std(best_scores)
-# for count in range(len(best_scores)):
-# 	if best_scores[count] >= mean1 + (2 * std1):
-# 		print(best_scores[count])
-# 		print(best_features[count][0])
-# 	elif best_features[count][0] == '7663':
-# 		print(best_features[count])
-# 		print(best_scores[count])
+for count in range(len(best_scores)):
+	if best_scores[count] >= mean1 + (2 * std1):
+		print(best_scores[count])
+		print(best_features[count][0])
+	elif best_features[count][0] == '7663':
+		print(best_features[count])
+		print(best_scores[count])
 
 
 
