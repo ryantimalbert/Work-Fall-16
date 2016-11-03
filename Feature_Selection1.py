@@ -73,6 +73,7 @@ for genome in Genomes:
 		target.append(genome[2])
 		features.append(genome[1])
 PFAM = PFAM_Parse[1 ::]
+features.shape
 X_new = SelectKBest(chi2, k=100).fit_transform(features, target)
 PFAM = PFAM_Parse[1 ::]
 
