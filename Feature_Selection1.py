@@ -113,11 +113,17 @@ for count in range(len(best_scores)):
 	# 	print(best_features[count])
 	# 	print(best_scores[count])
 
-print(best_features[0][0])
-for i in new_features:
-	print(i[0])
+
+####### Test
+# print(best_features[0][0])
+# for i in new_features:
+# 	print(i[0])
 
 
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+print(score.mean())
+print(score.std())
 
 
 
