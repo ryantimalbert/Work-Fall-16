@@ -8,7 +8,7 @@ from sklearn.feature_selection import RFECV
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 from sklearn.feature_selection import RFE
-from sklearn.svm import SVR
+from sklearn.svm import SVC
 import numpy
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
@@ -79,7 +79,7 @@ print(len(features))
 
 
 
-estimator = SVR(kernel="rbf")
+estimator = SVC(kernel="rbf")
 X_new = RFE(estimator, 100, step=1)
 
 # X_new = SelectKBest(k=100)
