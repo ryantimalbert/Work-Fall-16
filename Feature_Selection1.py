@@ -79,10 +79,10 @@ print(len(features))
 
 
 
-estimator = SVR(kernel="rbf")
-X_new = RFE(estimator, 5, step=1)
+# estimator = SVR(kernel="rbf")
+# X_new = RFE(estimator, 5, step=1)
 
-# X_new = SelectKBest(k=100)
+X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
