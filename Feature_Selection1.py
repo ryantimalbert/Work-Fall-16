@@ -79,10 +79,9 @@ print(len(features))
 
 
 
-estimator = SVC(kernel="rbf")
-X_new = RFE(estimator, 100, step=1)
 
-# X_new = SelectKBest(k=100)
+
+X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
@@ -93,7 +92,7 @@ count = 0
 ### for Cluster
 PFAM = PFAM_Parse
 
-
+out_file = open('result_cluster.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
@@ -107,15 +106,18 @@ for bol in correct:
 			new_features[count2].append(features[count2][count])
 	count += 1
 count = 0
-mean1 = numpy.mean(best_scores)
-std1 = numpy.std(best_scores)
+out_file.write('Top 100 features ranked \n')
+top_100 = []
 for count in range(len(best_scores)):
-	if best_scores[count] >= mean1 + (2 * std1):
-		print(best_scores[count])
-		print(best_features[count][0])
+	top_100.append((best_features[count][0], best_scores[count]))
 	# elif best_features[count][0] == '7663':
 	# 	print(best_features[count])
 	# 	print(best_scores[count])
+top_100 = sorted(top_100, key = lambda k : k[1])
+top_100 = reversed(top_100)
+for i in range(len(top_100)):
+	out_file.write(str(i + 1) + top_100[i][0] + '\n')
+out_file.close()
 
 
 ####### Test
