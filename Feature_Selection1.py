@@ -16,21 +16,21 @@ lines = table.readlines()
 table.close()
 PFAM_Parse = []
 
-######## FOR PFAM
-# for line in lines:
-# 	line = line.split()
-# 	PFAM_Parse.append([line[0], line[2 ::]])
-# ### 98 different features for selection
-# index = PFAM_Parse[0][1]
-# features = PFAM_Parse[1 ::]
-
-
-####### FOR CLUSTER
-index = lines[0].split()
-for line in lines[1 ::]:
+####### FOR PFAM
+for line in lines:
 	line = line.split()
-	PFAM_Parse.append([line[0], line[1 ::]])
-features = PFAM_Parse
+	PFAM_Parse.append([line[0], line[2 ::]])
+### 98 different features for selection
+index = PFAM_Parse[0][1]
+features = PFAM_Parse[1 ::]
+
+
+# ####### FOR CLUSTER
+# index = lines[0].split()
+# for line in lines[1 ::]:
+# 	line = line.split()
+# 	PFAM_Parse.append([line[0], line[1 ::]])
+# features = PFAM_Parse
 
 
 Genomes = []
@@ -86,13 +86,13 @@ X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
 
-### for PFAM
-# PFAM = PFAM_Parse[1 ::]
+## for PFAM
+PFAM = PFAM_Parse[1 ::]
 
-### for Cluster
-PFAM = PFAM_Parse
+# ### for Cluster
+# PFAM = PFAM_Parse
 
-out_file = open('result_cluster.txt', 'wb')
+out_file = open('result_PFAM.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
