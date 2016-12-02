@@ -114,7 +114,7 @@ for count in range(len(best_scores)):
 	# 	print(best_features[count])
 	# 	print(best_scores[count])
 top_100 = sorted(top_100, key = lambda k : k[1])
-top_100 = reversed(top_100)
+top_100.reverse()
 for i in range(len(top_100)):
 	out_file.write(str(i + 1) + top_100[i][0] + '\n')
 out_file.close()
