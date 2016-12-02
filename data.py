@@ -12,7 +12,7 @@ for family in current_data:
 	if 'eae' in family:
 		families.append(data_array[0])
 	total.append(data_array[0])
-print(mean(total))
-print(std(total))
-print(mean(families))
-print(std(families))
+print(numpy.mean(total))
+print(numpy.std(total))
+print(numpy.mean(families))
+print(numpy.std(families))
