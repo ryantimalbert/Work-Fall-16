@@ -22,6 +22,7 @@ for line in lines:
 	PFAM_Parse.append([line[0], line[2 ::]])
 ### 98 different features for selection
 index = PFAM_Parse[0][1]
+print(index)
 features = PFAM_Parse[1 ::]
 
 
