@@ -13,13 +13,26 @@ table = open(p_fam_table, 'r')
 lines = table.readlines()
 table.close()
 PFAM_Parse = []
-for line in lines:
+
+######## FOR PFAM
+# for line in lines:
+# 	line = line.split()
+# 	PFAM_Parse.append([line[0], line[2 ::]])
+# ### 98 different features for selection
+# index = PFAM_Parse[0][1]
+# features = PFAM_Parse[1 ::]
+
+
+####### FOR CLUSTER
+index = lines[0].split()
+for line in lines[1 ::]:
 	line = line.split()
-	PFAM_Parse.append([line[0], line[2 ::]])
-### 98 different features for selection
-index = PFAM_Parse[0][1]
-features = PFAM_Parse[1 ::]
+	PFAM_Parse.append([line[0], line[1 ::]])
+features = PFAM_Parse
+
+
 Genomes = []
+print(len(PFAM_Parse[0][1]))
 for count in range(len(index)):
 	genome = index[count]
 	fet = []
@@ -48,56 +61,90 @@ for line in lines:
 	else:
 		pass
 
-# cluster_table = sys.argv[3]
-# table = open(cluster_table, 'r')
-# lines = table.readlines()
-# table.close()
-# Cluster_Parse = []
-# for line in lines[1::]:
-# 	line = line.split()
-# 	Cluster_Parse.append([line[0], line[1 ::]])
 
-# index = lines[0].split()
-# features = Cluster_Parse
-# Cluster_Genome = {}
-# for count in range(len(index)):
-# 	genome = index[count]
-# 	Cluster_Genome[genome] = [[]]
-# 	for line in features:
-# 		Cluster_Genome[genome][0].append(line[1][count])
 
 target = []
 features = []
+count1 = 0
 for genome in Genomes:
 	if genome[0] in checked_genomes:
 		target.append(genome[2])
 		features.append(genome[1])
-PFAM = PFAM_Parse[1 ::]
-clf = ExtraTreesClassifier()
-clf = clf.fit(features, target)
+	else:
+		count1 += 1
+print(count1)
+print(len(features))
 
-weight_array = clf.feature_importances_
-valued_p_fam = []
-new_weights = []
+
+
+
+X_new = SelectKBest(k=100)
+X_new = X_new.fit(features, target)
+correct = X_new.get_support()
 count = 0
-PFAM = PFAM_Parse[1 ::]
-for num in weight_array:
-	if num != 0:
-	    valued_p_fam.append(PFAM[count][0])
-	    new_weights.append(num)
+
+### for PFAM
+# PFAM = PFAM_Parse[1 ::]
+
+### for Cluster
+PFAM = PFAM_Parse
+
+
+best_scores = []
+best_features = []
+new_features = []
+for i in features:
+	new_features.append([])
+for bol in correct:
+	if bol:
+		best_features.append(PFAM[count])
+		best_scores.append(X_new.scores_[count])
+		for count2 in range(len(new_features)):
+			new_features[count2].append(features[count2][count])
 	count += 1
-mean1 = numpy.mean(new_weights)
-std1 = numpy.std(new_weights)
-for count in range(len(new_weights)):
-	if new_weights[count] >= mean1 + (2 * std1):
-		print(valued_p_fam[count])
+count = 0
+mean1 = numpy.mean(best_scores)
+std1 = numpy.std(best_scores)
+for count in range(len(best_scores)):
+	if best_scores[count] >= mean1 + (2 * std1):
+		print(best_scores[count])
+		print(best_features[count][0])
+	# elif best_features[count][0] == '7663':
+	# 	print(best_features[count])
+	# 	print(best_scores[count])
+
+
+####### Test
+# print(best_features[0][0])
+# for i in new_features:
+# 	print(i[0])
+
+
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+print(score.mean())
+print(score.std())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # for val in valued_p_fam:
 # 	print(val)
-for count in range(len(weight_array)):
-	if PFAM[count][0] == 'PF05141.7':
-		print(weight_array[count])
-		print(count)
-	count += 1
 # print(PFAM[4556][0])
 # for i in range(len(features)):
 # 	print(features[i][4556])
