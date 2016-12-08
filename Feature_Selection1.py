@@ -153,7 +153,7 @@ for count in range(len(new_features)):
 	print(target[count])
 	clf = svm.SVC()
 	clf.fit(temp_features, temp_target)
-	prediction = clf.predict(new_features[count])
+	prediction = clf.predict([new_features[count]])
 	if prediction == target[count]:
 		print("TRUE")
 		correct += 1
