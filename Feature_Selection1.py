@@ -10,6 +10,15 @@ from sklearn.feature_selection import chi2
 from sklearn.feature_selection import RFE
 from sklearn.svm import SVC
 import numpy
+
+pfam_names = {}
+pfam_name_file = open('pfam.list', 'r')
+pfams = pfam_name_file.readlines()
+for line in pfams:
+	line = line.split()
+	print(line)
+pfam_name_file.close()
+
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
 lines = table.readlines()
@@ -131,6 +140,10 @@ score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
 
+clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+print(score.mean())
+print(score.std())
 
 
 
