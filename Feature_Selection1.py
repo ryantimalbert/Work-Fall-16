@@ -8,6 +8,7 @@ from sklearn.feature_selection import RFECV
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 from sklearn.feature_selection import RFE
+from sklearn.lda import LDA
 import numpy
 
 pfam_names = {}
@@ -138,7 +139,13 @@ out_file.close()
 # 	print(i[0])
 
 
-clf = clf = svm.SVC()
+clf = svm.SVC()
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+print(score.mean())
+print(score.std())
+
+## LDA check
+clf = LDA()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
