@@ -138,7 +138,8 @@ out_file.close()
 # for i in new_features:
 # 	print(i[0])
 
-
+print(new_features)
+print(target)
 clf = clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
