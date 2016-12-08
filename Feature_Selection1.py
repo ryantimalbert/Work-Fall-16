@@ -73,12 +73,13 @@ for line in lines:
 		pass
 
 
-
+genome_used = []
 target = []
 features = []
 count1 = 0
 for genome in Genomes:
 	if genome[0] in checked_genomes:
+		genome_used.append(genome[0])
 		target.append(genome[2])
 		features.append(genome[1])
 	else:
@@ -139,7 +140,7 @@ out_file.close()
 # 	print(i[0])
 
 clf = clf = svm.SVC()
-score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 58)
 print(score.mean())
 print(score.std())
 
