@@ -124,7 +124,12 @@ for count in range(len(best_scores)):
 top_100 = sorted(top_100, key = lambda k : k[1])
 top_100.reverse()
 for i in range(len(top_100)):
-	out_file.write(str(i + 1) + ' ' + top_100[i][0] + ' ' + pfam_names[top_100[i][0].split('.')[0]] + '\n')
+	real_name = top_100[i][0].split('.')[0]
+	if real_name in pfam_names:
+		print("here")
+		out_file.write(str(i + 1) + ' ' + top_100[i][0] + ' ' + pfam_names[top_100[i][0].split('.')[0]] + '\n')
+	else:
+		out_file.write(str(i + 1) + ' ' + top_100[i][0] + '\n')
 out_file.close()
 
 
