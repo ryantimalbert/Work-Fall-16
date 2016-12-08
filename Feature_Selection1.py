@@ -145,10 +145,10 @@ print(score.mean())
 print(score.std())
 
 ## LDA check
-clf = LDA()
-score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
-print(score.mean())
-print(score.std())
+# clf = LDA()
+# score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+# print(score.mean())
+# print(score.std())
 
 
 
