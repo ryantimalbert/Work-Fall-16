@@ -8,7 +8,7 @@ from sklearn.feature_selection import RFECV
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 from sklearn.feature_selection import RFE
-
+from sklearn.lda import LDA
 import numpy
 
 pfam_names = {}
@@ -90,7 +90,7 @@ print(len(features))
 
 
 
-X_new = SelectKBest(k=150)
+X_new = SelectKBest(k=1)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
@@ -101,7 +101,7 @@ PFAM = PFAM_Parse[1 ::]
 # ### for Cluster
 # PFAM = PFAM_Parse
 
-out_file = open('result_PFAM150.txt', 'wb')
+out_file = open('result_PFAM1.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
@@ -115,7 +115,7 @@ for bol in correct:
 			new_features[count2].append(features[count2][count])
 	count += 1
 count = 0
-out_file.write('Top 150 features ranked \n')
+out_file.write('Top 1 features ranked \n')
 top_100 = []
 for count in range(len(best_scores)):
 	top_100.append((best_features[count][0], best_scores[count]))
@@ -145,10 +145,10 @@ print(score.mean())
 print(score.std())
 
 ## LDA check
-# clf = LDA()
-# score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
-# print(score.mean())
-# print(score.std())
+clf = LDA()
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+print(score.mean())
+print(score.std())
 
 
 
