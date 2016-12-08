@@ -108,7 +108,7 @@ new_features = []
 for i in features:
 	new_features.append([])
 for bol in correct:
-	if bol:
+	if bol and PFAM[count][0] == '7663':
 		best_features.append(PFAM[count])
 		best_scores.append(X_new.scores_[count])
 		for count2 in range(len(new_features)):
