@@ -100,7 +100,7 @@ PFAM = PFAM_Parse[1 ::]
 # ### for Cluster
 # PFAM = PFAM_Parse
 
-out_file = open('result_PFAM.txt', 'wb')
+out_file = open('result_PFAM100.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
@@ -126,7 +126,6 @@ top_100.reverse()
 for i in range(len(top_100)):
 	real_name = top_100[i][0].split('.')[0]
 	if real_name in pfam_names:
-		print("here")
 		out_file.write(str(i + 1) + ' ' + top_100[i][0] + ' ' + pfam_names[top_100[i][0].split('.')[0]] + '\n')
 	else:
 		out_file.write(str(i + 1) + ' ' + top_100[i][0] + '\n')
@@ -138,11 +137,6 @@ out_file.close()
 # for i in new_features:
 # 	print(i[0])
 
-
-clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
-score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
-print(score.mean())
-print(score.std())
 
 clf = clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
