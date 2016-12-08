@@ -8,14 +8,14 @@ from sklearn.feature_selection import RFECV
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 from sklearn.feature_selection import RFE
-from sklearn.svm import SVC
 import numpy
 
 pfam_names = {}
 pfam_name_file = open('pfam.list', 'r')
 pfams = pfam_name_file.readlines()
 for line in pfams:
-	line = line.split()
+	line1 = line1[::]
+	line = line1.split()
 	print(line)
 pfam_name_file.close()
 
@@ -140,7 +140,7 @@ score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
 
-clf = RandomForestClassifier(n_estimators = 100, min_samples_split = 1)
+clf = clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
