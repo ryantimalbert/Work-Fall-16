@@ -14,9 +14,8 @@ pfam_names = {}
 pfam_name_file = open('pfam.list', 'r')
 pfams = pfam_name_file.readlines()
 for line in pfams:
-	line1 = line1[::]
-	line = line1.split()
-	print(line)
+	line = line.split()
+	pfam_names[line[0]] = line[1]
 pfam_name_file.close()
 
 p_fam_table = sys.argv[1]
@@ -125,7 +124,7 @@ for count in range(len(best_scores)):
 top_100 = sorted(top_100, key = lambda k : k[1])
 top_100.reverse()
 for i in range(len(top_100)):
-	out_file.write(str(i + 1) + ' ' + top_100[i][0] + '\n')
+	out_file.write(str(i + 1) + ' ' + top_100[i][0] + ' ' + pfam_names[top_100[i][0]] + '\n')
 out_file.close()
 
 
