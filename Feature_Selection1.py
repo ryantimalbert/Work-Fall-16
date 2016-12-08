@@ -96,10 +96,10 @@ correct = X_new.get_support()
 count = 0
 
 ## for PFAM
-PFAM = PFAM_Parse[1 ::]
+# PFAM = PFAM_Parse[1 ::]
 
 # ### for Cluster
-# PFAM = PFAM_Parse
+PFAM = PFAM_Parse
 
 out_file = open('result_Cluster150.txt', 'wb')
 best_scores = []
