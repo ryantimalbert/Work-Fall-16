@@ -108,7 +108,7 @@ new_features = []
 for i in features:
 	new_features.append([])
 for bol in correct:
-	if bol and PFAM[count] == '7663':
+	if bol:
 		best_features.append(PFAM[count])
 		best_scores.append(X_new.scores_[count])
 		for count2 in range(len(new_features)):
@@ -138,8 +138,6 @@ out_file.close()
 # for i in new_features:
 # 	print(i[0])
 
-print(new_features)
-print(target)
 clf = clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
