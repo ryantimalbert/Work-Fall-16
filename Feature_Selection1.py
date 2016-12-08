@@ -90,7 +90,7 @@ print(len(features))
 
 
 
-X_new = SelectKBest(k=125)
+X_new = SelectKBest(k=100)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
