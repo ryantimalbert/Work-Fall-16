@@ -89,7 +89,7 @@ print(len(features))
 
 
 
-X_new = SelectKBest(k=1)
+X_new = SelectKBest(k=75)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
@@ -100,7 +100,7 @@ PFAM = PFAM_Parse[1 ::]
 # ### for Cluster
 # PFAM = PFAM_Parse
 
-out_file = open('result_PFAM1.txt', 'wb')
+out_file = open('result_PFAM75.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
@@ -114,7 +114,7 @@ for bol in correct:
 			new_features[count2].append(features[count2][count])
 	count += 1
 count = 0
-out_file.write('Top 1 features ranked \n')
+out_file.write('Top 75 features ranked \n')
 top_100 = []
 for count in range(len(best_scores)):
 	top_100.append((best_features[count][0], best_scores[count]))
