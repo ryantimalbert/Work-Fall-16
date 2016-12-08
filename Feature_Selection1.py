@@ -91,7 +91,7 @@ print(len(features))
 
 
 
-X_new = SelectKBest(k=77)
+X_new = SelectKBest(k=200)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
@@ -102,21 +102,21 @@ count = 0
 # ### for Cluster
 PFAM = PFAM_Parse
 
-out_file = open('result_Cluster77.txt', 'wb')
+out_file = open('result_Cluster200.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
 for i in features:
 	new_features.append([])
 for bol in correct:
-	if bol and PFAM[count][0] == '7663':
+	if bol:
 		best_features.append(PFAM[count])
 		best_scores.append(X_new.scores_[count])
 		for count2 in range(len(new_features)):
 			new_features[count2].append(features[count2][count])
 	count += 1
 count = 0
-out_file.write('Top 77 features ranked \n')
+out_file.write('Top 200 features ranked \n')
 top_100 = []
 for count in range(len(best_scores)):
 	top_100.append((best_features[count][0], best_scores[count]))
@@ -140,7 +140,7 @@ out_file.close()
 # 	print(i[0])
 
 clf = clf = svm.SVC()
-score = cross_validation.cross_val_score(clf, new_features, target, cv = 50)
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
 
