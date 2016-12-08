@@ -11,13 +11,13 @@ from sklearn.feature_selection import RFE
 from sklearn.lda import LDA
 import numpy
 
-pfam_names = {}
-pfam_name_file = open('pfam.list', 'r')
-pfams = pfam_name_file.readlines()
-for line in pfams:
-	line = line.split()
-	pfam_names[line[0]] = line[1]
-pfam_name_file.close()
+# pfam_names = {}
+# pfam_name_file = open('pfam.list', 'r')
+# pfams = pfam_name_file.readlines()
+# for line in pfams:
+# 	line = line.split()
+# 	pfam_names[line[0]] = line[1]
+# pfam_name_file.close()
 
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
@@ -90,7 +90,7 @@ print(len(features))
 
 
 
-X_new = SelectKBest(k=150)
+X_new = SelectKBest(k=125)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
@@ -101,7 +101,7 @@ count = 0
 # ### for Cluster
 PFAM = PFAM_Parse
 
-out_file = open('result_Cluster150.txt', 'wb')
+out_file = open('result_Cluster125.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
@@ -115,7 +115,7 @@ for bol in correct:
 			new_features[count2].append(features[count2][count])
 	count += 1
 count = 0
-out_file.write('Top 150 features ranked \n')
+out_file.write('Top 125 features ranked \n')
 top_100 = []
 for count in range(len(best_scores)):
 	top_100.append((best_features[count][0], best_scores[count]))
