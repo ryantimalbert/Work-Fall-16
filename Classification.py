@@ -1,5 +1,5 @@
 import os
-from sklearn.svm import SVC
+from sklearn import svm
 from sklearn import preprocessing
 features = []
 target = []
