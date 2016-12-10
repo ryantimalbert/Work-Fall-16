@@ -1,5 +1,6 @@
 import os
 from sklearn import svm, cross_validation, preprocessing
+from sklearn.feature_selection import SelectKBest
 features = []
 target = []
 bio_remidiate = os.listdir('Bio_Remediated:Taylor')
@@ -48,3 +49,19 @@ score = cross_validation.cross_val_score(clf, new_features, target, cv = 5)
 print(score.mean())
 print(score.std())
 
+X_new = SelectKBest(k=10)
+X_new = X_new.fit(new_features, target)
+correct = X_new.get_support()
+count = 0
+best_features = []
+for i in features:
+	best_features.append([])
+for bol in correct:
+	if bol:
+		for count2 in range(len(new_features)):
+			best_features[count2].append(new_features[count2][count])
+	count += 1
+clf = svm.SVC()
+score = cross_validation.cross_val_score(clf, best_features, target, cv = 5)
+print(score.mean())
+print(score.std())
