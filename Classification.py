@@ -1,6 +1,5 @@
 import os
-from sklearn import svm
-from sklearn import preprocessing
+from sklearn import svm, cross_validation, preprocessing
 features = []
 target = []
 bio_remidiate = os.listdir('Bio_Remediated:Taylor')
