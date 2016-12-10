@@ -59,7 +59,7 @@ for i in features:
 for bol in correct:
 	if bol:
 		for count2 in range(len(new_features)):
-			best_features[count2].append(features[count2][count])
+			best_features[count2].append(new_features[count2][count])
 	count += 1
 clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, best_features, target, cv = 5)
