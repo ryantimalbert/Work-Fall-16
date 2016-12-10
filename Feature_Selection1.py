@@ -73,12 +73,13 @@ for line in lines:
 		pass
 
 
-
+genome_used = []
 target = []
 features = []
 count1 = 0
 for genome in Genomes:
 	if genome[0] in checked_genomes:
+		genome_used.append(genome[0])
 		target.append(genome[2])
 		features.append(genome[1])
 	else:
@@ -90,7 +91,7 @@ print(len(features))
 
 
 
-X_new = SelectKBest(k=77)
+X_new = SelectKBest(k=150)
 X_new = X_new.fit(features, target)
 correct = X_new.get_support()
 count = 0
@@ -101,7 +102,7 @@ count = 0
 # ### for Cluster
 PFAM = PFAM_Parse
 
-out_file = open('result_Cluster77.txt', 'wb')
+out_file = open('result_Cluster150.txt', 'wb')
 best_scores = []
 best_features = []
 new_features = []
@@ -115,7 +116,7 @@ for bol in correct:
 			new_features[count2].append(features[count2][count])
 	count += 1
 count = 0
-out_file.write('Top 77 features ranked \n')
+out_file.write('Top 150 features ranked \n')
 top_100 = []
 for count in range(len(best_scores)):
 	top_100.append((best_features[count][0], best_scores[count]))
@@ -138,10 +139,27 @@ out_file.close()
 # for i in new_features:
 # 	print(i[0])
 
-clf = clf = svm.SVC()
+clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
+correct = 0
+for count in range(len(new_features)):
+	temp_features = list(new_features)
+	temp_target = list(target)
+	temp_features.remove(new_features[count])
+	temp_target.remove(target[count])
+	print(genome_used[count])
+	print(target[count])
+	clf = svm.SVC()
+	clf.fit(temp_features, temp_target)
+	prediction = clf.predict([new_features[count]])
+	if prediction == target[count]:
+		print("TRUE")
+		correct += 1
+	else:
+		print("FALSE")
+print(float(correct)/len(target))
 
 ## LDA check
 # clf = LDA()
