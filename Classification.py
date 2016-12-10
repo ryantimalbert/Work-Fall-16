@@ -49,7 +49,7 @@ score = cross_validation.cross_val_score(clf, new_features, target, cv = 5)
 print(score.mean())
 print(score.std())
 
-X_new = SelectKBest(k=10)
+X_new = SelectKBest(k=5)
 X_new = X_new.fit(new_features, target)
 correct = X_new.get_support()
 count = 0
