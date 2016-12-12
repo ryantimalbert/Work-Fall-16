@@ -80,7 +80,7 @@ print(score.std())
 
 for b in best_features:
 	print(b)
-	b[8] = b[8] * 3
+	b[7] = b[7] * 3
 clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, best_features, target, cv = 5)
 print(score.mean())
