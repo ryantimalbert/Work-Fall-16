@@ -78,6 +78,20 @@ score = cross_validation.cross_val_score(clf, best_features, target, cv = 5)
 print(score.mean())
 print(score.std())
 
+file1 = open('strain.txt', 'r')
+lines = file1.readlines()
+feature = []
+for line in lines:
+	line = line.split()
+	for l in line:
+		if '(' in l:
+			l = l.replace('(', '')
+			l = l.replace(')', '')
+			feature.append(l)
+clf = svm.SVC()
+clf.train(best_features, target)
+print(clf.predict([feature]))
+
 for b in best_features:
 	b[6] = b[6] * 10
 	b[7] = b[7] * 3
@@ -85,3 +99,8 @@ clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, best_features, target, cv = 5)
 print(score.mean())
 print(score.std())
+
+clf = svm.SVC()
+clf.train(best_features, target)
+print(clf.predict([feature]))
+
