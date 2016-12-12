@@ -89,7 +89,7 @@ for line in lines:
 			l = l.replace(')', '')
 			feature.append(l)
 clf = svm.SVC()
-clf.train(best_features, target)
+clf.fit(best_features, target)
 print(clf.predict([feature]))
 
 for b in best_features:
@@ -101,6 +101,6 @@ print(score.mean())
 print(score.std())
 
 clf = svm.SVC()
-clf.train(best_features, target)
+clf.fit(best_features, target)
 print(clf.predict([feature]))
 
