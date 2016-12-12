@@ -81,13 +81,16 @@ print(score.std())
 file1 = open('strain.txt', 'r')
 lines = file1.readlines()
 feature = []
+count = 0
 for line in lines:
 	line = line.split()
 	for l in line:
 		if '(' in l:
 			l = l.replace('(', '')
 			l = l.replace(')', '')
-			feature.append(l)
+			if count in feature_index:
+				feature.append(l)
+	count += 1
 clf = svm.SVC()
 clf.fit(best_features, target)
 print(clf.predict([feature]))
