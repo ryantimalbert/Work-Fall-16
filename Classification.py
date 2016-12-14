@@ -94,7 +94,7 @@ for line in lines:
 clf = svm.SVC()
 clf.fit(best_features, target)
 print(clf.predict([feature]))
-
+print(len(best_features))
 for b in best_features:
 	b[6] = b[6] * 10
 	b[7] = b[7] * 3
