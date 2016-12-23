@@ -12,12 +12,12 @@ from sklearn.lda import LDA
 import numpy
 
 pfam_names = {}
-pfam_name_file = open('cls.list', 'r')
-pfams = pfam_name_file.readlines()
-for line in pfams:
-	line = line.split()
-	pfam_names[line[0]] = line[1]
-pfam_name_file.close()
+# pfam_name_file = open('cls.list', 'r')
+# pfams = pfam_name_file.readlines()
+# for line in pfams:
+# 	line = line.split()
+# 	pfam_names[line[0]] = line[1]
+# pfam_name_file.close()
 
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
