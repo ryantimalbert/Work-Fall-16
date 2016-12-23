@@ -48,7 +48,7 @@ for count in range(len(index)):
 	genome = index[count]
 	fet = []
 	for line in features:
-		print(line)
+		# print(line) line[0] is cluster
 		fet.append(line[1][count])
 	Genomes.append([genome, fet])
 life_style = sys.argv[2]
