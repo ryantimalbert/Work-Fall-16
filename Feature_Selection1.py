@@ -26,29 +26,29 @@ table.close()
 PFAM_Parse = []
 
 ####### FOR PFAM
-# for line in lines:
-# 	line = line.split()
-# 	PFAM_Parse.append([line[0], line[2 ::]])
-# ### 98 different features for selection
-# index = PFAM_Parse[0][1]
-# features = PFAM_Parse[1 ::]
+for line in lines:
+	line = line.split()
+	PFAM_Parse.append([line[0], line[2 ::]])
+### 98 different features for selection
+index = PFAM_Parse[0][1]
+features = PFAM_Parse[1 ::]
 
 
 # ####### FOR CLUSTER
-index = lines[0].split()
-for line in lines[1 ::]:
-	line = line.split()
-	PFAM_Parse.append([line[0], line[1 ::]])
-features = PFAM_Parse
+# index = lines[0].split()
+# for line in lines[1 ::]:
+# 	line = line.split()
+# 	PFAM_Parse.append([line[0], line[1 ::]])
+# features = PFAM_Parse
 
 ### Asafs clusters
-clusters = sys.argv[3]
-approved_clusters = []
-cluster_file = open(clusters, 'r')
-lines = cluster_file.readlines()
-for line in lines:
-	line = line.split()
-	approved_clusters.append(line[0])
+# clusters = sys.argv[3]
+# approved_clusters = []
+# cluster_file = open(clusters, 'r')
+# lines = cluster_file.readlines()
+# for line in lines:
+# 	line = line.split()
+# 	approved_clusters.append(line[0])
 
 Genomes = []
 print(len(PFAM_Parse[0][1]))
@@ -56,8 +56,9 @@ for count in range(len(index)):
 	genome = index[count]
 	fet = []
 	for line in features:
-		if line[0] in approved_clusters: ## if using Asafs clusters
-			fet.append(line[1][count])
+		# if line[0] in approved_clusters: ## if using Asafs clusters
+		# 	fet.append(line[1][count])
+		fet.append(line[1][count])
 	Genomes.append([genome, fet])
 life_style = sys.argv[2]
 style = open(life_style, 'r')
@@ -101,55 +102,55 @@ print(len(features[0]))
 
 
 
-# X_new = SelectKBest(k=150)
-# X_new = X_new.fit(features, target)
-# correct = X_new.get_support()
-# count = 0
+X_new = SelectKBest(k=100)
+X_new = X_new.fit(features, target)
+correct = X_new.get_support()
+count = 0
 
-## for PFAM
-# PFAM = PFAM_Parse[1 ::]
+# for PFAM
+PFAM = PFAM_Parse[1 ::]
 
-# ### for Cluster
-# PFAM = PFAM_Parse
+### for Cluster
+PFAM = PFAM_Parse
 
-# out_file = open('result_Cluster150.txt', 'wb')
-# best_scores = []
-# best_features = []
-# new_features = []
-# for i in features:
-# 	new_features.append([])
-# for bol in correct:
-# 	if bol:
-# 		best_features.append(PFAM[count])
-# 		best_scores.append(X_new.scores_[count])
-# 		for count2 in range(len(new_features)):
-# 			new_features[count2].append(features[count2][count])
-# 	count += 1
-# count = 0
-# out_file.write('Top 150 features ranked \n')
-# top_100 = []
-# for count in range(len(best_scores)):
-# 	top_100.append((best_features[count][0], best_scores[count]))
-# 	# elif best_features[count][0] == '7663':
-# 	# 	print(best_features[count])
-# 	# 	print(best_scores[count])
-# top_100 = sorted(top_100, key = lambda k : k[1])
-# top_100.reverse()
-# for i in range(len(top_100)):
-# 	real_name = top_100[i][0].split('.')[0]
-# 	if real_name in pfam_names:
-# 		out_file.write(str(i + 1) + ' ' + top_100[i][0] + ' ' + pfam_names[top_100[i][0].split('.')[0]] + '\n')
-# 	else:
-# 		out_file.write(str(i + 1) + ' ' + top_100[i][0] + '\n')
-# out_file.close()
+out_file = open('result_PFAM100.txt', 'wb')
+best_scores = []
+best_features = []
+new_features = []
+for i in features:
+	new_features.append([])
+for bol in correct:
+	if bol:
+		best_features.append(PFAM[count])
+		best_scores.append(X_new.scores_[count])
+		for count2 in range(len(new_features)):
+			new_features[count2].append(features[count2][count])
+	count += 1
+count = 0
+out_file.write('Top 150 features ranked \n')
+top_100 = []
+for count in range(len(best_scores)):
+	top_100.append((best_features[count][0], best_scores[count]))
+	# elif best_features[count][0] == '7663':
+	# 	print(best_features[count])
+	# 	print(best_scores[count])
+top_100 = sorted(top_100, key = lambda k : k[1])
+top_100.reverse()
+for i in range(len(top_100)):
+	real_name = top_100[i][0].split('.')[0]
+	if real_name in pfam_names:
+		out_file.write(str(i + 1) + ' ' + top_100[i][0] + ' ' + pfam_names[top_100[i][0].split('.')[0]] + '\n')
+	else:
+		out_file.write(str(i + 1) + ' ' + top_100[i][0] + '\n')
+out_file.close()
 
 
-####### Test
-# print(best_features[0][0])
-# for i in new_features:
-# 	print(i[0])
+###### Test
+print(best_features[0][0])
+for i in new_features:
+	print(i[0])
 
-new_features = features
+# new_features = features
 
 clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
