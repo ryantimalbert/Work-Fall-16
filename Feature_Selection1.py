@@ -12,7 +12,7 @@ from sklearn.lda import LDA
 import numpy
 
 pfam_names = {}
-pfam_name_file = open('pfam.list', 'r')
+pfam_name_file = open('cls.list', 'r')
 pfams = pfam_name_file.readlines()
 for line in pfams:
 	line = line.split()
@@ -48,6 +48,7 @@ for count in range(len(index)):
 	genome = index[count]
 	fet = []
 	for line in features:
+		print(line)
 		fet.append(line[1][count])
 	Genomes.append([genome, fet])
 life_style = sys.argv[2]
@@ -143,6 +144,9 @@ clf = svm.SVC()
 score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
 print(score.mean())
 print(score.std())
+
+
+
 correct = 0
 for count in range(len(new_features)):
 	temp_features = list(new_features)
