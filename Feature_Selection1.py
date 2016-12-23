@@ -45,7 +45,7 @@ features = PFAM_Parse
 clusters = sys.argv[3]
 approved_clusters = []
 cluster_file = open(clusters, 'r')
-lines = cluster_file.lines()
+lines = cluster_file.readlines()
 for line in lines:
 	line = line.split()
 	approved_clusters.append(line[0])
