@@ -95,6 +95,7 @@ for genome in Genomes:
 		count1 += 1
 print(count1)
 print(len(features))
+print(len(features[0]))
 
 
 
