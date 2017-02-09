@@ -12,12 +12,12 @@ from sklearn.lda import LDA
 import numpy
 
 pfam_names = {}
-# pfam_name_file = open('cls.list', 'r')
-# pfams = pfam_name_file.readlines()
-# for line in pfams:
-# 	line = line.split()
-# 	pfam_names[line[0]] = line[1]
-# pfam_name_file.close()
+pfam_name_file = open('cls.list', 'r')
+pfams = pfam_name_file.readlines()
+for line in pfams:
+	line = line.split()
+	pfam_names[line[0]] = line[1]
+pfam_name_file.close()
 
 p_fam_table = sys.argv[1]
 table = open(p_fam_table, 'r')
@@ -26,22 +26,22 @@ table.close()
 PFAM_Parse = []
 
 ####### FOR PFAM
-for line in lines:
-	line = line.split()
-	PFAM_Parse.append([line[0], line[2 ::]])
-### 98 different features for selection
-index = PFAM_Parse[0][1]
-features = PFAM_Parse[1 ::]
+# for line in lines:
+# 	line = line.split()
+# 	PFAM_Parse.append([line[0], line[2 ::]])
+# ### 98 different features for selection
+# index = PFAM_Parse[0][1]
+# features = PFAM_Parse[1 ::]
 
 
 # ####### FOR CLUSTER
-# index = lines[0].split()
-# for line in lines[1 ::]:
-# 	line = line.split()
-# 	PFAM_Parse.append([line[0], line[1 ::]])
-# features = PFAM_Parse
+index = lines[0].split()
+for line in lines[1 ::]:
+	line = line.split()
+	PFAM_Parse.append([line[0], line[1 ::]])
+features = PFAM_Parse
 
-### Asafs clusters
+## Asafs clusters
 # clusters = sys.argv[3]
 # approved_clusters = []
 # cluster_file = open(clusters, 'r')
@@ -56,7 +56,7 @@ for count in range(len(index)):
 	genome = index[count]
 	fet = []
 	for line in features:
-		# if line[0] in approved_clusters: ## if using Asafs clusters
+		# if line[0] in approved_clusters: ## if using Asafs clusters ## asaf
 		# 	fet.append(line[1][count])
 		fet.append(line[1][count])
 	Genomes.append([genome, fet])
@@ -108,7 +108,7 @@ correct = X_new.get_support()
 count = 0
 
 # for PFAM
-PFAM = PFAM_Parse[1 ::]
+# PFAM = PFAM_Parse[1 ::]
 
 ### for Cluster
 PFAM = PFAM_Parse
@@ -146,9 +146,9 @@ out_file.close()
 
 
 ###### Test
-print(best_features[0][0])
-for i in new_features:
-	print(i[0])
+# print(best_features[0][0])
+# for i in new_features:
+# 	print(i[0])
 
 # new_features = features
 
@@ -177,11 +177,11 @@ for count in range(len(new_features)):
 		print("FALSE")
 print(float(correct)/len(target))
 
-## LDA check
-# clf = LDA()
-# score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
-# print(score.mean())
-# print(score.std())
+# LDA check
+clf = LDA()
+score = cross_validation.cross_val_score(clf, new_features, target, cv = 15)
+print(score.mean())
+print(score.std())
 
 
 
@@ -218,7 +218,7 @@ print(float(correct)/len(target))
 # 		target2.append(Genomes[genome][1])
 # 		features2.append(Cluster_Genome[genome][0])
 
-#### Print used pfamId's
+# ### Print used pfamId's
 # clf = ExtraTreesClassifier()
 # clf = clf.fit(features, target)
 
@@ -236,7 +236,7 @@ print(float(correct)/len(target))
 # for p_fam in valued_p_fam:
 # 	print(p_fam)
 # print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-## Print used ClusterId's
+# # Print used ClusterId's
 # clf2 = ExtraTreesClassifier()
 # clf2 = clf.fit(features2, target2)
 # weight_array2 = clf2.feature_importances_
